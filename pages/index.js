@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
-import { LOGO, METHODOLOGY, RECIPES } from '../lib/knowledge';
+import { LOGO, METHODOLOGY, RECIPES } from '../lib/knowledge'; 
 
 const SINTS = ['🤕 Dor de cabeça','😴 Insônia','🔥 Gastrite / Refluxo','💨 Inchaço / Gases','😰 Ansiedade','😔 Depressão / Humor baixo','🩸 Colesterol alto','🍬 Glicemia elevada','⚡ Cansaço / Fadiga','🫀 Pressão alta','🦴 Dores articulares','🧠 Névoa mental','🌸 TPM / Hormonal','⚖️ Emagrecer','💪 Ganhar massa','🦠 Intestino irregular','🔬 Fígado / Enzimas alt.','🦋 Tireoide','🛡️ Autoimune','🩺 Detox / Fígado'];
 const DIETS = ['🌿 Vegano','🥚 Vegetariano','🌾 Sem glúten','🥛 Sem leite e derivados','🫙 Sem lactose','🥗 Low carb','💪 Alto em proteína','🥑 Cetogênico','🌊 Baixo em histamina','🫘 Low FODMAP','🐟 Pescetariano','🩺 Anti-inflamatório'];
