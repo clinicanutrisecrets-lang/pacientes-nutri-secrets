@@ -180,7 +180,8 @@ Por categoria com os itens necessários para as receitas.`;
         {chatOpen?'✕':'💬'}
       </button>
   );
-  const Card = ({children}) => <div style={{background:'white',borderRadius:16,padding:26,boxShadow:'0 4px 24px rgba(10,189,192,0.08)',marginBottom:20,border:'1px solid #d0e8e8'}}>{children}</div>;
+  const cardStyle = {background:'white',borderRadius:16,padding:26,boxShadow:'0 4px 24px rgba(10,189,192,0.08)',marginBottom:20,border:'1px solid #d0e8e8'};
+  const Card = ({children}) => <div style={cardStyle}>{children}</div>;
   const inp = {width:'100%',fontFamily:"'DM Sans',sans-serif",fontSize:'16px',border:'1.5px solid #d0e8e8',borderRadius:10,padding:'11px 14px',background:'white',color:'#1a2e2e',outline:'none',resize:'vertical',boxSizing:'border-box'};
   const lbl = {display:'block',fontSize:'0.82rem',fontWeight:600,color:'#1a2e2e',marginBottom:6};
   const btnP = {padding:'12px 24px',borderRadius:10,fontFamily:"'DM Sans',sans-serif",fontSize:'0.88rem',fontWeight:600,cursor:'pointer',border:'none',background:'linear-gradient(135deg,#0ABDC0,#078b8e)',color:'white',boxShadow:'0 4px 14px rgba(10,189,192,0.3)',display:'inline-flex',alignItems:'center',gap:7};
