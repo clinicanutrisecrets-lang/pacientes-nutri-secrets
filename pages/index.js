@@ -176,17 +176,9 @@ Por categoria com os itens necessários para as receitas.`;
     <span onClick={()=>set(v)} style={{display:'inline-flex',alignItems:'center',gap:6,padding:'8px 14px',borderRadius:100,border:`1.5px solid ${cur===v?'#0ABDC0':'#d0e8e8'}`,background:cur===v?'#0ABDC0':'white',color:cur===v?'white':'#5a7272',cursor:'pointer',fontSize:'0.8rem',fontWeight:500,userSelect:'none',transition:'all 0.2s',margin:'0 4px 8px 0'}}>{v}</span>
   );
   const prog = (step) => (
-    <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:24}}>
-      {[['1','Dados'],['2','Sintomas'],['3','Preferências'],['✨','Cardápio']].map(([n,l],i)=>(
-        <span key={i} style={{display:'contents'}}>
-          <div style={{display:'flex',alignItems:'center',gap:6}}>
-            <div style={{width:28,height:28,borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'0.75rem',fontWeight:700,border:`2px solid ${i<step?'#0ABDC0':i===step?'#0ABDC0':'#d0e8e8'}`,background:i<step?'#0ABDC0':i===step?'white':'white',color:i<step?'white':i===step?'#0ABDC0':'#5a7272',boxShadow:i===step?'0 0 0 3px rgba(10,189,192,0.18)':'none'}}>{i<step?'✓':n}</div>
-            <span style={{fontSize:'0.72rem',color:i<=step?'#078b8e':'#5a7272',fontWeight:500}}>{l}</span>
-          </div>
-          {i<3&&<div style={{flex:1,height:2,background:i<step?'#0ABDC0':'#d0e8e8',maxWidth:50}}/>}
-        </span>
-      ))}
-    </div>
+    <button onClick={()=>setChatOpen(o=>!o)} style={{position:'fixed',bottom:24,right:24,width:58,height:58,borderRadius:'50%',background:'linear-gradient(135deg,#F97316,#d95f0a)',border:'none',cursor:'pointer',boxShadow:'0 4px 20px rgba(249,115,22,0.5)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:1000,transition:'all 0.3s',fontSize:'1.5rem'}}>
+        {chatOpen?'✕':'💬'}
+      </button>
   );
   const Card = ({children}) => <div style={{background:'white',borderRadius:16,padding:26,boxShadow:'0 4px 24px rgba(10,189,192,0.08)',marginBottom:20,border:'1px solid #d0e8e8'}}>{children}</div>;
   const inp = {width:'100%',fontFamily:"'DM Sans',sans-serif",fontSize:'16px',border:'1.5px solid #d0e8e8',borderRadius:10,padding:'11px 14px',background:'white',color:'#1a2e2e',outline:'none',resize:'vertical',boxSizing:'border-box',WebkitUserSelect:'text',userSelect:'text',touchAction:'manipulation'};
