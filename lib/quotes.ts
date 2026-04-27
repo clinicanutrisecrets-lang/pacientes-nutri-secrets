@@ -1,9 +1,8 @@
+import yahooFinance from "yahoo-finance2";
 import { withCache } from "./cache";
+import { mapWithConcurrency } from "./concurrency";
 
-const YAHOO_BASE = "https://query1.finance.yahoo.com/v8/finance/chart";
-
-const USER_AGENT =
-  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
+type Interval = "1m" | "2m" | "5m" | "15m" | "30m" | "60m" | "90m" | "1h" | "1d" | "5d" | "1wk" | "1mo" | "3mo";
 
 export type SparklinePoint = { t: number; c: number };
 
@@ -29,90 +28,30 @@ export type Historical = {
   points: HistoricalPoint[];
 };
 
-type YahooMeta = {
-  symbol: string;
-  currency?: string;
-  exchangeName?: string;
-  regularMarketPrice?: number;
-  chartPreviousClose?: number;
-  previousClose?: number;
-  regularMarketDayHigh?: number;
-  regularMarketDayLow?: number;
-  regularMarketTime?: number;
-};
-
-type YahooChartResult = {
-  chart: {
-    result: Array<{
-      meta: YahooMeta;
-      timestamp?: number[];
-      indicators?: {
-        quote?: Array<{ close?: Array<number | null> }>;
-      };
-    }> | null;
-    error: { code: string; description: string } | null;
-  };
-};
-
-async function yahooChart(
-  symbol: string,
-  interval: string,
-  range: string,
-): Promise<YahooChartResult> {
-  const url = `${YAHOO_BASE}/${encodeURIComponent(
-    symbol,
-  )}?interval=${interval}&range=${range}&includePrePost=false`;
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": USER_AGENT,
-      Accept: "application/json",
-    },
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error(`Yahoo HTTP ${res.status} for ${symbol}`);
+function rangeToPeriod1(range: string): Date {
+  const now = Date.now();
+  const day = 24 * 3600 * 1000;
+  switch (range) {
+    case "1d":
+      return new Date(now - 1.5 * day);
+    case "5d":
+      return new Date(now - 8 * day);
+    case "1mo":
+      return new Date(now - 35 * day);
+    case "3mo":
+      return new Date(now - 95 * day);
+    case "1y":
+      return new Date(now - 370 * day);
+    default:
+      return new Date(now - 8 * day);
   }
-  return (await res.json()) as YahooChartResult;
 }
 
-function parseQuote(json: YahooChartResult): Quote {
-  const result = json.chart.result?.[0];
-  if (!result) {
-    throw new Error(json.chart.error?.description ?? "Yahoo: empty result");
-  }
-  const meta = result.meta;
-  const price = meta.regularMarketPrice;
-  const previousClose = meta.chartPreviousClose ?? meta.previousClose;
-  if (price == null || previousClose == null) {
-    throw new Error("Yahoo: missing price fields");
-  }
-  const change = price - previousClose;
-  const changePercent = (change / previousClose) * 100;
-
-  const timestamps = result.timestamp ?? [];
-  const closes = result.indicators?.quote?.[0]?.close ?? [];
-  const sparkline: SparklinePoint[] = [];
-  for (let i = 0; i < timestamps.length; i++) {
-    const c = closes[i];
-    if (typeof c === "number" && Number.isFinite(c)) {
-      sparkline.push({ t: timestamps[i], c });
-    }
-  }
-
-  return {
-    symbol: meta.symbol,
-    currency: meta.currency ?? "USD",
-    exchangeName: meta.exchangeName ?? null,
-    price,
-    previousClose,
-    change,
-    changePercent,
-    dayLow: meta.regularMarketDayLow ?? null,
-    dayHigh: meta.regularMarketDayHigh ?? null,
-    marketTime: meta.regularMarketTime ?? null,
-    sparkline,
-    source: "yahoo",
-  };
+function toEpoch(value: Date | number | undefined | null): number | null {
+  if (value == null) return null;
+  if (value instanceof Date) return Math.floor(value.getTime() / 1000);
+  if (typeof value === "number") return value;
+  return null;
 }
 
 type AlphaVantageGlobalQuote = {
@@ -158,11 +97,77 @@ async function alphaVantageQuote(symbol: string): Promise<Quote> {
   };
 }
 
+type ChartQuote = {
+  date: Date;
+  open: number | null;
+  high: number | null;
+  low: number | null;
+  close: number | null;
+  volume: number | null;
+};
+
+type ChartMeta = {
+  symbol: string;
+  currency?: string;
+  exchangeName?: string;
+  regularMarketPrice?: number;
+  chartPreviousClose?: number;
+  previousClose?: number;
+  regularMarketDayHigh?: number;
+  regularMarketDayLow?: number;
+  regularMarketTime?: Date | number;
+};
+
+type ChartResult = {
+  meta: ChartMeta;
+  quotes: ChartQuote[];
+};
+
+async function yahooChart(
+  symbol: string,
+  interval: Interval,
+  range: string,
+): Promise<ChartResult> {
+  const result = await yahooFinance.chart(symbol, {
+    period1: rangeToPeriod1(range),
+    interval,
+  });
+  return result as unknown as ChartResult;
+}
+
 export async function getQuote(symbol: string): Promise<Quote> {
-  return withCache(`quote:${symbol}`, 30, async () => {
+  return withCache(`quote:${symbol}`, 60, async () => {
     try {
-      const json = await yahooChart(symbol, "5m", "1d");
-      return parseQuote(json);
+      const result = await yahooChart(symbol, "5m", "1d");
+      const meta = result.meta;
+      const price = meta.regularMarketPrice;
+      const previousClose =
+        meta.chartPreviousClose ?? (meta as { previousClose?: number }).previousClose;
+      if (price == null || previousClose == null) {
+        throw new Error("Yahoo: missing price fields");
+      }
+      const change = price - previousClose;
+      const changePercent = (change / previousClose) * 100;
+      const sparkline: SparklinePoint[] = (result.quotes ?? [])
+        .filter((q): q is typeof q & { close: number } => typeof q.close === "number")
+        .map((q) => ({
+          t: Math.floor(q.date.getTime() / 1000),
+          c: q.close,
+        }));
+      return {
+        symbol: meta.symbol,
+        currency: meta.currency ?? "USD",
+        exchangeName: meta.exchangeName ?? null,
+        price,
+        previousClose,
+        change,
+        changePercent,
+        dayLow: meta.regularMarketDayLow ?? null,
+        dayHigh: meta.regularMarketDayHigh ?? null,
+        marketTime: toEpoch(meta.regularMarketTime as Date | number | undefined),
+        sparkline,
+        source: "yahoo",
+      };
     } catch (err) {
       if (process.env.ALPHA_VANTAGE_KEY) {
         return alphaVantageQuote(symbol);
@@ -172,17 +177,19 @@ export async function getQuote(symbol: string): Promise<Quote> {
   });
 }
 
-export async function getQuotes(symbols: string[]): Promise<Array<Quote | { symbol: string; error: string }>> {
-  const results = await Promise.all(
-    symbols.map(async (s) => {
-      try {
-        return await getQuote(s);
-      } catch (err) {
-        return { symbol: s, error: err instanceof Error ? err.message : "Unknown error" };
-      }
-    }),
-  );
-  return results;
+export async function getQuotes(
+  symbols: string[],
+): Promise<Array<Quote | { symbol: string; error: string }>> {
+  return mapWithConcurrency(symbols, 2, async (s) => {
+    try {
+      return await getQuote(s);
+    } catch (err) {
+      return {
+        symbol: s,
+        error: err instanceof Error ? err.message : "Unknown error",
+      };
+    }
+  });
 }
 
 export async function getHistorical(
@@ -190,21 +197,14 @@ export async function getHistorical(
   interval: string,
   range: string,
 ): Promise<Historical> {
-  return withCache(`hist:${symbol}:${interval}:${range}`, 60, async () => {
-    const json = await yahooChart(symbol, interval, range);
-    const result = json.chart.result?.[0];
-    if (!result) {
-      throw new Error(json.chart.error?.description ?? "Yahoo: empty result");
-    }
-    const timestamps = result.timestamp ?? [];
-    const closes = result.indicators?.quote?.[0]?.close ?? [];
-    const points: HistoricalPoint[] = [];
-    for (let i = 0; i < timestamps.length; i++) {
-      const c = closes[i];
-      if (typeof c === "number" && Number.isFinite(c)) {
-        points.push({ t: timestamps[i], close: c });
-      }
-    }
+  return withCache(`hist:${symbol}:${interval}:${range}`, 120, async () => {
+    const result = await yahooChart(symbol, interval as Interval, range);
+    const points: HistoricalPoint[] = (result.quotes ?? [])
+      .filter((q): q is typeof q & { close: number } => typeof q.close === "number")
+      .map((q) => ({
+        t: Math.floor(q.date.getTime() / 1000),
+        close: q.close,
+      }));
     return {
       symbol: result.meta.symbol,
       currency: result.meta.currency ?? "USD",
