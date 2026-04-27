@@ -1,7 +1,9 @@
-import yahooFinance from "yahoo-finance2";
+import YahooFinance from "yahoo-finance2";
 import { withCache } from "./cache";
 import { mapWithConcurrency } from "./concurrency";
 import { scoreSentiment, type Sentiment } from "./sentiment";
+
+const yahooFinance = new YahooFinance();
 
 export type NewsItem = {
   symbol: string;
