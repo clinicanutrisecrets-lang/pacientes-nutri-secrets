@@ -80,6 +80,11 @@ export function WatchlistDashboard() {
         </div>
       )}
 
+      <div>
+        <h2 className="font-display text-2xl mb-4">Today&apos;s Movers</h2>
+        <MoversChart quotes={quotes} />
+      </div>
+
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {WATCHLIST.map((entry) => {
           const match = quotes.find((q) => q.symbol === entry.symbol);
@@ -94,11 +99,6 @@ export function WatchlistDashboard() {
             />
           );
         })}
-      </div>
-
-      <div>
-        <h2 className="font-display text-2xl mb-4">Today&apos;s Movers</h2>
-        <MoversChart quotes={quotes} />
       </div>
     </section>
   );
