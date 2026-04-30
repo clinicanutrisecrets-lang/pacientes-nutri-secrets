@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme tokens */
+  --color-bg: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F2EEE6;
+  --color-border: #E5DFD3;
+  --color-primary: #7BA89C;
+  --color-primary-hover: #6B998C;
+  --color-secondary: #D4A574;
+  --color-correct: #8FB89F;
+  --color-incorrect: #C9A0A0;
+  --color-text: #2D2A26;
+  --color-text-soft: #6B6560;
+
+  /* Type */
+  --font-serif: 'Fraunces', 'Lora', Georgia, serif;
+  --font-sans: 'Inter', 'Nunito', system-ui, sans-serif;
+
+  /* Motion */
+  --motion-fast: 250ms;
+  --motion-base: 350ms;
+  --ease-gentle: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.dark {
+  --color-bg: #1C1F26;
+  --color-surface: #242832;
+  --color-surface-soft: #2C313D;
+  --color-border: #353B49;
+  --color-primary: #7BA89C;
+  --color-primary-hover: #8DB6AB;
+  --color-secondary: #D4A574;
+  --color-correct: #8FB89F;
+  --color-incorrect: #C9A0A0;
+  --color-text: #E8E3D8;
+  --color-text-soft: #A29C92;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  button {
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: rgba(123, 168, 156, 0.25);
+    color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .bg-app { background-color: var(--color-bg); }
+  .bg-surface { background-color: var(--color-surface); }
+  .bg-surface-soft { background-color: var(--color-surface-soft); }
+  .text-app { color: var(--color-text); }
+  .text-soft { color: var(--color-text-soft); }
+  .border-app { border-color: var(--color-border); }
+
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
