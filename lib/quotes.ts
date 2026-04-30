@@ -137,36 +137,54 @@ async function yahooChart(
   return result as unknown as ChartResult;
 }
 
+type YahooQuote = {
+  symbol: string;
+  currency?: string;
+  exchange?: string;
+  fullExchangeName?: string;
+  regularMarketPrice?: number;
+  regularMarketChange?: number;
+  regularMarketChangePercent?: number;
+  regularMarketPreviousClose?: number;
+  regularMarketDayHigh?: number;
+  regularMarketDayLow?: number;
+  regularMarketTime?: Date | number;
+  postMarketPrice?: number;
+  preMarketPrice?: number;
+};
+
 export async function getQuote(symbol: string): Promise<Quote> {
   return withCache(`quote:${symbol}`, 60, async () => {
     try {
-      const result = await yahooChart(symbol, "5m", "1d");
-      const meta = result.meta;
-      const price = meta.regularMarketPrice;
-      const previousClose =
-        meta.chartPreviousClose ?? (meta as { previousClose?: number }).previousClose;
+      const [snap, chart] = await Promise.all([
+        yahooFinance.quote(symbol) as unknown as Promise<YahooQuote>,
+        yahooChart(symbol, "5m", "1d").catch(() => null),
+      ]);
+      const price = snap.regularMarketPrice;
+      const previousClose = snap.regularMarketPreviousClose;
       if (price == null || previousClose == null) {
         throw new Error("Yahoo: missing price fields");
       }
-      const change = price - previousClose;
-      const changePercent = (change / previousClose) * 100;
-      const sparkline: SparklinePoint[] = (result.quotes ?? [])
+      const change = snap.regularMarketChange ?? price - previousClose;
+      const changePercent =
+        snap.regularMarketChangePercent ?? ((price - previousClose) / previousClose) * 100;
+      const sparkline: SparklinePoint[] = (chart?.quotes ?? [])
         .filter((q): q is typeof q & { close: number } => typeof q.close === "number")
         .map((q) => ({
           t: Math.floor(q.date.getTime() / 1000),
           c: q.close,
         }));
       return {
-        symbol: meta.symbol,
-        currency: meta.currency ?? "USD",
-        exchangeName: meta.exchangeName ?? null,
+        symbol: snap.symbol,
+        currency: snap.currency ?? "USD",
+        exchangeName: snap.fullExchangeName ?? snap.exchange ?? null,
         price,
         previousClose,
         change,
         changePercent,
-        dayLow: meta.regularMarketDayLow ?? null,
-        dayHigh: meta.regularMarketDayHigh ?? null,
-        marketTime: toEpoch(meta.regularMarketTime as Date | number | undefined),
+        dayLow: snap.regularMarketDayLow ?? null,
+        dayHigh: snap.regularMarketDayHigh ?? null,
+        marketTime: toEpoch(snap.regularMarketTime),
         sparkline,
         source: "yahoo",
       };
