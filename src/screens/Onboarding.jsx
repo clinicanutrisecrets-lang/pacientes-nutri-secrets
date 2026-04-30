@@ -1,0 +1,170 @@
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { loadConfig, saveConfig, markOnboarded } from '../lib/config.js';
+import { buzz } from '../lib/haptic.js';
+
+const slide = {
+  initial: { opacity: 0, x: 24 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -24 },
+  transition: { duration: 0.35, ease: [0.4, 0, 0.2, 1] }
+};
+
+const PERFIS = [
+  {
+    id: 'pausa',
+    titulo: 'Pausa',
+    tempo: '~30s por dia',
+    descricao: 'Só a pausa. Um botão. Nada mais.'
+  },
+  {
+    id: 'reflexao',
+    titulo: 'Reflexão',
+    tempo: '~2-3min por dia',
+    descricao: 'Pausa + check-ins curtos de manhã e à noite.'
+  },
+  {
+    id: 'diario',
+    titulo: 'Diário',
+    tempo: '~5min por dia',
+    descricao: 'Pausa, check-ins, registro de refeições e exercícios.'
+  }
+];
+
+export default function Onboarding({ onDone }) {
+  const [step, setStep] = useState(0);
+  const [perfil, setPerfil] = useState('pausa');
+  const [frase, setFrase] = useState('');
+
+  const next = () => {
+    buzz(30);
+    setStep((s) => s + 1);
+  };
+
+  const finish = () => {
+    const cfg = loadConfig();
+    saveConfig({ ...cfg, perfil, fraseAncora: frase.trim() });
+    markOnboarded();
+    buzz(60);
+    onDone();
+  };
+
+  return (
+    <div className="screen safe-top safe-bottom">
+      <div className="flex-1 flex flex-col justify-center">
+        <AnimatePresence mode="wait">
+          {step === 0 && (
+            <motion.div key="0" {...slide} className="space-y-6">
+              <h1 className="h-display">Oi.</h1>
+              <p className="text-lg text-grafite/80 leading-relaxed">
+                O Pausa é uma ferramenta pra te ajudar a sair do automático com a comida.
+              </p>
+              <p className="text-lg text-grafite/80 leading-relaxed">
+                Sem cobrança, sem culpa, sem dieta.
+              </p>
+            </motion.div>
+          )}
+          {step === 1 && (
+            <motion.div key="1" {...slide} className="space-y-6">
+              <h2 className="h-display">Privacidade</h2>
+              <p className="text-lg text-grafite/80 leading-relaxed">
+                Tudo o que você registrar fica só no seu celular.
+              </p>
+              <p className="text-base text-cinza leading-relaxed">
+                Nem sua nutri tem acesso, a menos que você exporte e mostre.
+              </p>
+            </motion.div>
+          )}
+          {step === 2 && (
+            <motion.div key="2" {...slide} className="space-y-5">
+              <h2 className="h-display">Como você quer usar?</h2>
+              <p className="text-base text-cinza">Pode trocar depois nas configurações.</p>
+              <div className="space-y-3 pt-2">
+                {PERFIS.map((p) => {
+                  const ativo = perfil === p.id;
+                  return (
+                    <button
+                      key={p.id}
+                      onClick={() => {
+                        buzz(20);
+                        setPerfil(p.id);
+                      }}
+                      className={`w-full text-left rounded-2xl p-5 transition-all duration-300 ease-calm border ${
+                        ativo
+                          ? 'bg-salvia text-white border-salvia shadow-soft'
+                          : 'bg-neve text-grafite border-grafite/10'
+                      }`}
+                    >
+                      <div className="flex items-baseline justify-between">
+                        <span className="font-serif text-xl">{p.titulo}</span>
+                        <span className={`text-sm ${ativo ? 'text-white/80' : 'text-cinza'}`}>
+                          {p.tempo}
+                        </span>
+                      </div>
+                      <p className={`text-sm mt-1 ${ativo ? 'text-white/90' : 'text-grafite/70'}`}>
+                        {p.descricao}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+          {step === 3 && (
+            <motion.div key="3" {...slide} className="space-y-5">
+              <h2 className="h-display">Frase âncora</h2>
+              <p className="text-base text-grafite/80 leading-relaxed">
+                Escreve uma frase que te lembra por que você começou. Pode mudar depois.
+              </p>
+              <textarea
+                value={frase}
+                onChange={(e) => setFrase(e.target.value.slice(0, 140))}
+                placeholder="(opcional)"
+                rows={3}
+                className="w-full rounded-2xl bg-neve border border-grafite/10 p-4 text-base resize-none focus:border-salvia"
+              />
+              <p className="text-xs text-cinza text-right">{frase.length}/140</p>
+            </motion.div>
+          )}
+          {step === 4 && (
+            <motion.div key="4" {...slide} className="space-y-6">
+              <h2 className="h-display">Pronto.</h2>
+              <p className="text-lg text-grafite/80 leading-relaxed">
+                É só tocar no botão quando precisar.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <div className="flex items-center gap-3 pt-6">
+        <Dots total={5} active={step} />
+        <div className="flex-1" />
+        {step < 4 ? (
+          <button onClick={next} className="btn-primary">
+            Continuar
+          </button>
+        ) : (
+          <button onClick={finish} className="btn-primary">
+            Começar
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Dots({ total, active }) {
+  return (
+    <div className="flex items-center gap-1.5">
+      {Array.from({ length: total }).map((_, i) => (
+        <div
+          key={i}
+          className={`h-1.5 rounded-full transition-all duration-300 ${
+            i === active ? 'w-6 bg-salvia' : 'w-1.5 bg-grafite/15'
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
