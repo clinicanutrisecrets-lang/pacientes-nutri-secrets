@@ -19,11 +19,12 @@ export default function MealStep({ value, onChange }) {
             <button
               key={opt.id}
               onClick={() => onChange(opt.id)}
-              className={`w-full rounded-2xl p-5 text-left transition-all duration-300 ease-calm border ${
-                ativo
-                  ? 'bg-salvia text-white border-salvia shadow-soft'
-                  : 'bg-neve text-grafite border-grafite/10 active:scale-[0.98]'
-              }`}
+              className="w-full rounded-2xl p-5 text-left transition-all duration-300 ease-calm border active:scale-[0.98]"
+              style={{
+                backgroundColor: ativo ? 'var(--primary)' : 'var(--surface)',
+                borderColor: ativo ? 'transparent' : 'var(--border)',
+                color: ativo ? '#fff' : 'var(--text)'
+              }}
             >
               <span className="text-base font-medium">{opt.label}</span>
             </button>

@@ -56,10 +56,10 @@ export default function Onboarding({ onDone }) {
           {step === 0 && (
             <motion.div key="0" {...slide} className="space-y-6">
               <h1 className="h-display">Oi.</h1>
-              <p className="text-lg text-grafite/80 leading-relaxed">
+              <p className="text-lg text-body leading-relaxed">
                 O Pausa é uma ferramenta pra te ajudar a sair do automático com a comida.
               </p>
-              <p className="text-lg text-grafite/80 leading-relaxed">
+              <p className="text-lg text-body leading-relaxed">
                 Sem cobrança, sem culpa, sem dieta.
               </p>
             </motion.div>
@@ -67,10 +67,10 @@ export default function Onboarding({ onDone }) {
           {step === 1 && (
             <motion.div key="1" {...slide} className="space-y-6">
               <h2 className="h-display">Privacidade</h2>
-              <p className="text-lg text-grafite/80 leading-relaxed">
+              <p className="text-lg text-body leading-relaxed">
                 Tudo o que você registrar fica só no seu celular.
               </p>
-              <p className="text-base text-cinza leading-relaxed">
+              <p className="text-base text-muted leading-relaxed">
                 Nem sua nutri tem acesso, a menos que você exporte e mostre.
               </p>
             </motion.div>
@@ -78,7 +78,7 @@ export default function Onboarding({ onDone }) {
           {step === 2 && (
             <motion.div key="2" {...slide} className="space-y-5">
               <h2 className="h-display">Como você quer usar?</h2>
-              <p className="text-base text-cinza">Pode trocar depois nas configurações.</p>
+              <p className="text-base text-muted">Pode trocar depois nas configurações.</p>
               <div className="space-y-3 pt-2">
                 {PERFIS.map((p) => {
                   const ativo = perfil === p.id;
@@ -89,19 +89,21 @@ export default function Onboarding({ onDone }) {
                         buzz(20);
                         setPerfil(p.id);
                       }}
-                      className={`w-full text-left rounded-2xl p-5 transition-all duration-300 ease-calm border ${
-                        ativo
-                          ? 'bg-salvia text-white border-salvia shadow-soft'
-                          : 'bg-neve text-grafite border-grafite/10'
-                      }`}
+                      className="w-full text-left rounded-2xl p-5 transition-all duration-300 ease-calm border"
+                      style={{
+                        backgroundColor: ativo ? 'var(--primary)' : 'var(--surface)',
+                        borderColor: ativo ? 'transparent' : 'var(--border)',
+                        color: ativo ? '#fff' : 'var(--text)',
+                        boxShadow: ativo ? '0 4px 20px rgba(122, 155, 126, 0.18)' : 'none'
+                      }}
                     >
                       <div className="flex items-baseline justify-between">
                         <span className="font-serif text-xl">{p.titulo}</span>
-                        <span className={`text-sm ${ativo ? 'text-white/80' : 'text-cinza'}`}>
+                        <span className="text-sm opacity-80">
                           {p.tempo}
                         </span>
                       </div>
-                      <p className={`text-sm mt-1 ${ativo ? 'text-white/90' : 'text-grafite/70'}`}>
+                      <p className="text-sm mt-1 opacity-90">
                         {p.descricao}
                       </p>
                     </button>
@@ -113,7 +115,7 @@ export default function Onboarding({ onDone }) {
           {step === 3 && (
             <motion.div key="3" {...slide} className="space-y-5">
               <h2 className="h-display">Frase âncora</h2>
-              <p className="text-base text-grafite/80 leading-relaxed">
+              <p className="text-base text-body leading-relaxed">
                 Escreve uma frase que te lembra por que você começou. Pode mudar depois.
               </p>
               <textarea
@@ -121,15 +123,15 @@ export default function Onboarding({ onDone }) {
                 onChange={(e) => setFrase(e.target.value.slice(0, 140))}
                 placeholder="(opcional)"
                 rows={3}
-                className="w-full rounded-2xl bg-neve border border-grafite/10 p-4 text-base resize-none focus:border-salvia"
+                className="w-full rounded-2xl surface p-4 text-base resize-none"
               />
-              <p className="text-xs text-cinza text-right">{frase.length}/140</p>
+              <p className="text-xs text-muted text-right">{frase.length}/140</p>
             </motion.div>
           )}
           {step === 4 && (
             <motion.div key="4" {...slide} className="space-y-6">
               <h2 className="h-display">Pronto.</h2>
-              <p className="text-lg text-grafite/80 leading-relaxed">
+              <p className="text-lg text-body leading-relaxed">
                 É só tocar no botão quando precisar.
               </p>
             </motion.div>
@@ -160,9 +162,11 @@ function Dots({ total, active }) {
       {Array.from({ length: total }).map((_, i) => (
         <div
           key={i}
-          className={`h-1.5 rounded-full transition-all duration-300 ${
-            i === active ? 'w-6 bg-salvia' : 'w-1.5 bg-grafite/15'
-          }`}
+          className="h-1.5 rounded-full transition-all duration-300"
+          style={{
+            width: i === active ? '24px' : '6px',
+            backgroundColor: i === active ? 'var(--primary)' : 'var(--border)'
+          }}
         />
       ))}
     </div>

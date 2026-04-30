@@ -3,6 +3,29 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg: #F5F1EA;
+    --surface: #FBFAF7;
+    --text: #3D3D3D;
+    --muted: #7A7A7A;
+    --border: rgba(61, 61, 61, 0.12);
+    --primary: #7A9B7E;
+    --primary-strong: #5C7860;
+    --warm: #C97B5C;
+    --cool: #8FA7B5;
+  }
+  .dark {
+    --bg: #1F1F1E;
+    --surface: #2A2A28;
+    --text: #E8E5E0;
+    --muted: #9A9A95;
+    --border: rgba(232, 229, 224, 0.12);
+    --primary: #A0BFA4;
+    --primary-strong: #BFD4C2;
+    --warm: #D89A7E;
+    --cool: #A8BCC8;
+  }
+
   html, body, #root {
     height: 100%;
   }
@@ -11,9 +34,12 @@
     -webkit-tap-highlight-color: transparent;
   }
   body {
-    @apply bg-areia text-grafite font-sans antialiased;
+    background-color: var(--bg);
+    color: var(--text);
+    @apply font-sans antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     overscroll-behavior: none;
+    transition: background-color 400ms ease;
   }
   button {
     -webkit-tap-highlight-color: transparent;
@@ -21,6 +47,10 @@
   }
   input, textarea {
     @apply outline-none;
+    color: var(--text);
+  }
+  textarea::placeholder, input::placeholder {
+    color: var(--muted);
   }
 }
 
@@ -29,30 +59,45 @@
     @apply min-h-full w-full flex flex-col px-6 py-8 max-w-md mx-auto;
   }
   .btn-primary {
-    @apply bg-salvia text-white rounded-2xl px-6 py-4 text-base font-medium
+    background-color: var(--primary);
+    color: #FBFAF7;
+    @apply rounded-2xl px-6 py-4 text-base font-medium
            transition-all duration-300 ease-calm active:scale-95
-           hover:bg-salvia-dark shadow-soft;
+           shadow-soft;
   }
+  .dark .btn-primary { color: #1F1F1E; }
+  .btn-primary:hover { background-color: var(--primary-strong); }
+
   .btn-secondary {
-    @apply bg-neve text-grafite rounded-2xl px-6 py-4 text-base font-medium
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    @apply rounded-2xl px-6 py-4 text-base font-medium
            transition-all duration-300 ease-calm active:scale-95
-           border border-grafite/10 shadow-card;
+           shadow-card;
   }
   .btn-ghost {
-    @apply text-cinza rounded-2xl px-4 py-3 text-sm font-medium
+    color: var(--muted);
+    @apply rounded-2xl px-4 py-3 text-sm font-medium
            transition-all duration-300 ease-calm active:scale-95;
   }
   .card {
-    @apply bg-neve rounded-2xl p-6 shadow-card;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    @apply rounded-2xl p-5 shadow-card;
   }
   .h-display {
     @apply font-serif text-3xl leading-tight;
+    color: var(--text);
   }
+  .text-muted { color: var(--muted); }
+  .text-body { color: var(--text); }
+  .surface { background-color: var(--surface); border: 1px solid var(--border); }
 }
 
 @layer utilities {
-  .safe-top { padding-top: env(safe-area-inset-top); }
-  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .safe-top { padding-top: max(env(safe-area-inset-top), 8px); }
+  .safe-bottom { padding-bottom: max(env(safe-area-inset-bottom), 12px); }
 }
 
 input[type='range'] {
@@ -65,12 +110,12 @@ input[type='range'] {
 input[type='range']::-webkit-slider-runnable-track {
   height: 8px;
   border-radius: 999px;
-  background: rgba(61, 61, 61, 0.12);
+  background: var(--border);
 }
 input[type='range']::-moz-range-track {
   height: 8px;
   border-radius: 999px;
-  background: rgba(61, 61, 61, 0.12);
+  background: var(--border);
 }
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -78,16 +123,16 @@ input[type='range']::-webkit-slider-thumb {
   height: 28px;
   width: 28px;
   border-radius: 999px;
-  background: #FBFAF7;
+  background: var(--surface);
   border: 3px solid currentColor;
   margin-top: -10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 input[type='range']::-moz-range-thumb {
   height: 28px;
   width: 28px;
   border-radius: 999px;
-  background: #FBFAF7;
+  background: var(--surface);
   border: 3px solid currentColor;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }

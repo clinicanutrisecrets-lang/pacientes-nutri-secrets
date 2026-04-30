@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import IntensityStep from '../flow/IntensityStep.jsx';
 import EmotionStep from '../flow/EmotionStep.jsx';
@@ -24,8 +24,10 @@ export default function ImpulseFlow({ config, onDone }) {
   const [fezRespiracao, setFezRespiracao] = useState(false);
   const [intensidadeDepois, setIntensidadeDepois] = useState(null);
 
-  // Animated background tied to intensity in the first screen
-  const bg = bgForIntensity(step === 0 ? intensidadeAntes : intensidadeDepois ?? intensidadeAntes);
+  const dark = !!config.temaEscuro;
+  const intensidadeAtual = step === 0 ? intensidadeAntes : intensidadeDepois ?? intensidadeAntes;
+  const bg = bgForIntensity(intensidadeAtual, dark);
+  const advanceTimerRef = useRef(null);
 
   useEffect(() => {
     document.body.style.transition = 'background-color 500ms ease';
@@ -35,9 +37,27 @@ export default function ImpulseFlow({ config, onDone }) {
     };
   }, [bg]);
 
+  // Cancel any pending auto-advance when step changes (prevents double-fire on rapid taps)
+  useEffect(() => {
+    return () => {
+      if (advanceTimerRef.current) {
+        clearTimeout(advanceTimerRef.current);
+        advanceTimerRef.current = null;
+      }
+    };
+  }, [step]);
+
   const advance = () => {
     buzz(20);
     setStep((s) => s + 1);
+  };
+
+  const scheduleAdvance = (delay = 180) => {
+    if (advanceTimerRef.current) clearTimeout(advanceTimerRef.current);
+    advanceTimerRef.current = setTimeout(() => {
+      advanceTimerRef.current = null;
+      advance();
+    }, delay);
   };
 
   const back = () => {
@@ -69,7 +89,7 @@ export default function ImpulseFlow({ config, onDone }) {
         <button
           aria-label="Voltar"
           onClick={back}
-          className="text-cinza hover:text-grafite p-2 -ml-2 transition-colors"
+          className="text-muted hover:text-body p-2 -ml-2 transition-colors"
         >
           <BackIcon />
         </button>
@@ -85,6 +105,7 @@ export default function ImpulseFlow({ config, onDone }) {
                 value={intensidadeAntes}
                 onChange={setIntensidadeAntes}
                 onContinue={advance}
+                dark={dark}
               />
             </motion.div>
           )}
@@ -94,7 +115,7 @@ export default function ImpulseFlow({ config, onDone }) {
                 value={emocao}
                 onChange={(v) => {
                   setEmocao(v);
-                  setTimeout(advance, 180);
+                  scheduleAdvance();
                 }}
               />
             </motion.div>
@@ -105,7 +126,7 @@ export default function ImpulseFlow({ config, onDone }) {
                 value={ultimaRefeicao}
                 onChange={(v) => {
                   setUltimaRefeicao(v);
-                  setTimeout(advance, 180);
+                  scheduleAdvance();
                 }}
               />
             </motion.div>
@@ -130,6 +151,7 @@ export default function ImpulseFlow({ config, onDone }) {
                 intensidadeDepois={intensidadeDepois ?? intensidadeAntes}
                 onChangeDepois={setIntensidadeDepois}
                 onDecide={finish}
+                dark={dark}
               />
             </motion.div>
           )}
@@ -145,9 +167,11 @@ function Dots({ total, active }) {
       {Array.from({ length: total }).map((_, i) => (
         <div
           key={i}
-          className={`h-1.5 rounded-full transition-all duration-300 ${
-            i === active ? 'w-6 bg-salvia' : 'w-1.5 bg-grafite/15'
-          }`}
+          className="h-1.5 rounded-full transition-all duration-300"
+          style={{
+            width: i === active ? '24px' : '6px',
+            backgroundColor: i === active ? 'var(--primary)' : 'var(--border)'
+          }}
         />
       ))}
     </div>

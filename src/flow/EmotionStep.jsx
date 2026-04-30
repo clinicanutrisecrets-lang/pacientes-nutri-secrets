@@ -12,7 +12,7 @@ export default function EmotionStep({ value, onChange }) {
     <div className="flex-1 flex flex-col">
       <div className="pt-8 pb-2">
         <h2 className="h-display">O que tá rolando aí?</h2>
-        <p className="text-cinza text-base mt-2">Escolhe a que mais bate agora.</p>
+        <p className="text-muted text-base mt-2">Escolhe a que mais bate agora.</p>
       </div>
 
       <div className="flex-1 grid grid-cols-2 gap-3 content-center py-6">
@@ -22,11 +22,12 @@ export default function EmotionStep({ value, onChange }) {
             <button
               key={id}
               onClick={() => onChange(id)}
-              className={`rounded-2xl p-5 flex flex-col items-center justify-center gap-3 transition-all duration-300 ease-calm border ${
-                ativo
-                  ? 'bg-salvia text-white border-salvia shadow-soft scale-[0.98]'
-                  : 'bg-neve text-grafite border-grafite/10 active:scale-95'
-              }`}
+              className="rounded-2xl p-5 flex flex-col items-center justify-center gap-3 transition-all duration-300 ease-calm border active:scale-95"
+              style={{
+                backgroundColor: ativo ? 'var(--primary)' : 'var(--surface)',
+                borderColor: ativo ? 'transparent' : 'var(--border)',
+                color: ativo ? '#fff' : 'var(--text)'
+              }}
             >
               <Icon active={ativo} />
               <span className="text-base font-medium">{label}</span>
@@ -42,7 +43,7 @@ const stroke = 1.6;
 
 function FomeIcon({ active }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : '#7A9B7E'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : 'currentColor'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 3a4 4 0 0 1 4 4v3a4 4 0 1 1-8 0V7a4 4 0 0 1 4-4z" />
       <path d="M8 17v3" />
       <path d="M16 17v3" />
@@ -51,7 +52,7 @@ function FomeIcon({ active }) {
 }
 function AnsiedadeIcon({ active }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : '#C97B5C'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : 'currentColor'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0" />
       <path d="M3 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0" />
     </svg>
@@ -59,7 +60,7 @@ function AnsiedadeIcon({ active }) {
 }
 function TedioIcon({ active }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : '#8FA7B5'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : 'currentColor'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="9" />
       <path d="M8 14h8" />
       <path d="M9 9h.01" />
@@ -69,7 +70,7 @@ function TedioIcon({ active }) {
 }
 function RaivaIcon({ active }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : '#C97B5C'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : 'currentColor'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 5l4 2" />
       <path d="M21 5l-4 2" />
       <circle cx="12" cy="14" r="7" />
@@ -79,7 +80,7 @@ function RaivaIcon({ active }) {
 }
 function TristezaIcon({ active }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : '#8FA7B5'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : 'currentColor'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="9" />
       <path d="M9 16c1-1.5 5-1.5 6 0" />
       <path d="M9 9h.01" />
@@ -89,7 +90,7 @@ function TristezaIcon({ active }) {
 }
 function CansacoIcon({ active }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : '#7A9B7E'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={active ? '#fff' : 'currentColor'} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   );

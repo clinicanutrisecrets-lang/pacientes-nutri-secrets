@@ -9,15 +9,25 @@ const PERFIS = [
   { id: 'diario', label: 'Diário', tempo: '~5min' }
 ];
 
+const SOS_SLOTS = 5;
+
 export default function Settings({ onBack, onResetOnboarding }) {
   const [config, setConfig] = useState(loadConfig());
   const [confirmandoWipe, setConfirmandoWipe] = useState(false);
+  const [editandoSOS, setEditandoSOS] = useState(false);
 
   const update = (patch) => {
     const next = { ...config, ...patch };
     setConfig(next);
     saveConfig(next);
     buzz(15);
+  };
+
+  const updateSOSItem = (index, valor) => {
+    const lista = [...(config.listaSOS || [])];
+    while (lista.length < SOS_SLOTS) lista.push('');
+    lista[index] = valor.slice(0, 100);
+    update({ listaSOS: lista });
   };
 
   const handleExport = async () => {
@@ -42,13 +52,15 @@ export default function Settings({ onBack, onResetOnboarding }) {
     onResetOnboarding();
   };
 
+  const lista = config.listaSOS || [];
+
   return (
     <div className="screen safe-top safe-bottom overflow-y-auto">
       <div className="flex items-center gap-3 pb-4">
         <button
           aria-label="Voltar"
           onClick={onBack}
-          className="text-cinza hover:text-grafite p-2 -ml-2 transition-colors"
+          className="text-muted hover:text-body p-2 -ml-2 transition-colors"
         >
           <BackIcon />
         </button>
@@ -63,17 +75,16 @@ export default function Settings({ onBack, onResetOnboarding }) {
               <button
                 key={p.id}
                 onClick={() => update({ perfil: p.id })}
-                className={`w-full rounded-2xl p-4 text-left transition-all border ${
-                  ativo
-                    ? 'bg-salvia text-white border-salvia shadow-soft'
-                    : 'bg-neve text-grafite border-grafite/10'
-                }`}
+                className="w-full rounded-2xl p-4 text-left transition-all border"
+                style={{
+                  backgroundColor: ativo ? 'var(--primary)' : 'var(--surface)',
+                  borderColor: ativo ? 'transparent' : 'var(--border)',
+                  color: ativo ? '#fff' : 'var(--text)'
+                }}
               >
                 <div className="flex justify-between items-baseline">
                   <span className="font-medium">{p.label}</span>
-                  <span className={`text-sm ${ativo ? 'text-white/80' : 'text-cinza'}`}>
-                    {p.tempo}
-                  </span>
+                  <span className="text-sm opacity-80">{p.tempo}</span>
                 </div>
               </button>
             );
@@ -87,8 +98,50 @@ export default function Settings({ onBack, onResetOnboarding }) {
           onChange={(e) => update({ fraseAncora: e.target.value.slice(0, 140) })}
           placeholder="Uma frase que te lembra por que você começou."
           rows={2}
-          className="w-full rounded-2xl bg-neve border border-grafite/10 p-4 text-base resize-none focus:border-salvia"
+          className="w-full rounded-2xl surface p-4 text-base resize-none"
         />
+      </Section>
+
+      <Section title="Lista pessoal SOS">
+        <p className="text-sm text-muted leading-relaxed pb-3">
+          Até 5 coisas que já te ajudaram antes. Preencha em momento calmo — aparecem na tela do SOS.
+        </p>
+        {!editandoSOS ? (
+          <>
+            {lista.filter(Boolean).length === 0 ? (
+              <p className="text-sm text-muted italic pb-3">(vazia)</p>
+            ) : (
+              <ul className="space-y-2 pb-3">
+                {lista.filter(Boolean).map((item, i) => (
+                  <li key={i} className="text-sm text-body card">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <button onClick={() => setEditandoSOS(true)} className="btn-secondary w-full">
+              {lista.filter(Boolean).length === 0 ? 'Preencher lista' : 'Editar lista'}
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="space-y-2 pb-3">
+              {Array.from({ length: SOS_SLOTS }).map((_, i) => (
+                <input
+                  key={i}
+                  type="text"
+                  value={lista[i] || ''}
+                  onChange={(e) => updateSOSItem(i, e.target.value)}
+                  placeholder={`Item ${i + 1}`}
+                  className="w-full rounded-2xl surface p-4 text-base"
+                />
+              ))}
+            </div>
+            <button onClick={() => setEditandoSOS(false)} className="btn-primary w-full">
+              Pronto
+            </button>
+          </>
+        )}
       </Section>
 
       <Section title="Ritmo">
@@ -106,7 +159,13 @@ export default function Settings({ onBack, onResetOnboarding }) {
         />
       </Section>
 
-      <Section title="Sensorial">
+      <Section title="Aparência">
+        <Toggle
+          label="Tema escuro"
+          hint="Cores mais suaves para a noite."
+          value={config.temaEscuro}
+          onChange={(v) => update({ temaEscuro: v })}
+        />
         <Toggle
           label="Vibração"
           hint="Pequeno toque háptico nos botões."
@@ -116,7 +175,7 @@ export default function Settings({ onBack, onResetOnboarding }) {
       </Section>
 
       <Section title="Seus dados">
-        <p className="text-sm text-cinza leading-relaxed pb-3">
+        <p className="text-sm text-muted leading-relaxed pb-3">
           Tudo fica só no seu celular. Você pode exportar pra mostrar pra sua nutri ou apagar quando quiser.
         </p>
         <button onClick={handleExport} className="btn-secondary w-full mb-2">
@@ -125,13 +184,14 @@ export default function Settings({ onBack, onResetOnboarding }) {
         {!confirmandoWipe ? (
           <button
             onClick={() => setConfirmandoWipe(true)}
-            className="w-full rounded-2xl px-6 py-4 text-base font-medium border border-terracota/30 text-terracota active:scale-[0.98] transition-all"
+            className="w-full rounded-2xl px-6 py-4 text-base font-medium active:scale-[0.98] transition-all"
+            style={{ border: '1px solid var(--warm)', color: 'var(--warm)' }}
           >
             Apagar todos os dados
           </button>
         ) : (
-          <div className="rounded-2xl border border-terracota/30 p-4 space-y-3">
-            <p className="text-sm text-grafite">
+          <div className="rounded-2xl p-4 space-y-3" style={{ border: '1px solid var(--warm)' }}>
+            <p className="text-sm text-body">
               Isso apaga tudo e te leva pro onboarding. Sem volta.
             </p>
             <div className="flex gap-2">
@@ -143,7 +203,8 @@ export default function Settings({ onBack, onResetOnboarding }) {
               </button>
               <button
                 onClick={handleWipe}
-                className="flex-1 rounded-2xl px-6 py-4 text-base font-medium bg-terracota text-white active:scale-[0.98] transition-all"
+                className="flex-1 rounded-2xl px-6 py-4 text-base font-medium text-white active:scale-[0.98] transition-all"
+                style={{ backgroundColor: 'var(--warm)' }}
               >
                 Apagar
               </button>
@@ -152,7 +213,7 @@ export default function Settings({ onBack, onResetOnboarding }) {
         )}
       </Section>
 
-      <p className="text-xs text-cinza/60 text-center pt-4 pb-2">
+      <p className="text-xs text-muted text-center pt-4 pb-2">
         Pausa · seus dados ficam no seu dispositivo
       </p>
     </div>
@@ -162,7 +223,7 @@ export default function Settings({ onBack, onResetOnboarding }) {
 function Section({ title, children }) {
   return (
     <div className="pb-6">
-      <h3 className="text-xs uppercase tracking-wider text-cinza pb-3">{title}</h3>
+      <h3 className="text-xs uppercase tracking-wider text-muted pb-3">{title}</h3>
       {children}
     </div>
   );
@@ -175,18 +236,16 @@ function Toggle({ label, hint, value, onChange }) {
       className="w-full flex items-center justify-between gap-4 py-3 text-left"
     >
       <div className="flex-1">
-        <div className="text-base font-medium text-grafite">{label}</div>
-        {hint && <div className="text-sm text-cinza mt-0.5">{hint}</div>}
+        <div className="text-base font-medium text-body">{label}</div>
+        {hint && <div className="text-sm text-muted mt-0.5">{hint}</div>}
       </div>
       <div
-        className={`relative w-12 h-7 rounded-full transition-colors duration-300 flex-shrink-0 ${
-          value ? 'bg-salvia' : 'bg-grafite/20'
-        }`}
+        className="relative w-12 h-7 rounded-full transition-colors duration-300 flex-shrink-0"
+        style={{ backgroundColor: value ? 'var(--primary)' : 'var(--border)' }}
       >
         <div
-          className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform duration-300 ${
-            value ? 'translate-x-5' : 'translate-x-0'
-          }`}
+          className="absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform duration-300"
+          style={{ transform: value ? 'translateX(20px)' : 'translateX(0)' }}
         />
       </div>
     </button>
