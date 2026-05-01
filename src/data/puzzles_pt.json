@@ -1,0 +1,970 @@
+[
+  {
+    "id": "t-e-001",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Qual planeta do sistema solar é conhecido como Planeta Vermelho?",
+    "type": "multiple-choice",
+    "options": ["Vênus", "Marte", "Júpiter", "Saturno"],
+    "answer": "Marte",
+    "explanation": "Marte tem cor avermelhada porque sua superfície é coberta de óxido de ferro — basicamente ferrugem.",
+    "funFact": "Um dia em Marte é só 37 minutos mais longo que um dia na Terra."
+  },
+  {
+    "id": "t-e-002",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Qual é o maior oceano da Terra?",
+    "type": "multiple-choice",
+    "options": ["Atlântico", "Índico", "Ártico", "Pacífico"],
+    "answer": "Pacífico",
+    "explanation": "O Oceano Pacífico cobre cerca de um terço da superfície da Terra — maior que todos os continentes juntos.",
+    "funFact": "O nome vem do latim 'pacificus,' que significa pacífico, calmo."
+  },
+  {
+    "id": "t-e-003",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Quantos continentes existem?",
+    "type": "multiple-choice",
+    "options": ["5", "6", "7", "8"],
+    "answer": "7",
+    "explanation": "África, Antártida, Ásia, Oceania, Europa, América do Norte e América do Sul."
+  },
+  {
+    "id": "t-e-004",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Que gás as plantas absorvem do ar para fazer alimento?",
+    "type": "multiple-choice",
+    "options": ["Oxigênio", "Nitrogênio", "Gás carbônico", "Hidrogênio"],
+    "answer": "Gás carbônico",
+    "explanation": "As plantas absorvem CO2 e usam a luz solar para transformá-lo em açúcar, liberando oxigênio.",
+    "funFact": "Uma árvore adulta pode absorver cerca de 22 kg de CO2 por ano."
+  },
+  {
+    "id": "t-e-005",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Qual é o maior mamífero da Terra?",
+    "type": "multiple-choice",
+    "options": ["Elefante africano", "Baleia-azul", "Girafa", "Urso polar"],
+    "answer": "Baleia-azul",
+    "explanation": "Baleias-azuis chegam a 30 metros de comprimento e 200 toneladas.",
+    "funFact": "O coração de uma baleia-azul tem aproximadamente o tamanho de um carro pequeno."
+  },
+  {
+    "id": "t-e-006",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Qual é a menor unidade da vida?",
+    "type": "multiple-choice",
+    "options": ["Átomo", "Célula", "Molécula", "Tecido"],
+    "answer": "Célula",
+    "explanation": "Todo ser vivo é feito de uma ou mais células, que realizam todas as funções básicas da vida."
+  },
+  {
+    "id": "t-e-007",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Qual é a montanha mais alta acima do nível do mar?",
+    "type": "multiple-choice",
+    "options": ["K2", "Kilimanjaro", "Everest", "Aconcágua"],
+    "answer": "Everest",
+    "explanation": "O Monte Everest tem 8.849 metros, na fronteira entre Nepal e Tibete.",
+    "funFact": "O Everest cresce cerca de 4mm por ano por causa da movimentação tectônica."
+  },
+  {
+    "id": "t-e-008",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Qual é a substância natural mais dura da Terra?",
+    "type": "multiple-choice",
+    "options": ["Ouro", "Ferro", "Diamante", "Quartzo"],
+    "answer": "Diamante",
+    "explanation": "Diamantes são feitos de átomos de carbono organizados numa estrutura cristalina extremamente forte."
+  },
+  {
+    "id": "t-e-009",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Quantos ossos um adulto humano tem?",
+    "type": "multiple-choice",
+    "options": ["186", "206", "226", "246"],
+    "answer": "206",
+    "explanation": "Adultos têm 206 ossos, mas bebês nascem com cerca de 270 — muitos se fundem conforme crescemos.",
+    "funFact": "Mais da metade dos seus ossos estão nas mãos e pés."
+  },
+  {
+    "id": "t-e-010",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Qual é o maior país em área?",
+    "type": "multiple-choice",
+    "options": ["China", "Canadá", "Estados Unidos", "Rússia"],
+    "answer": "Rússia",
+    "explanation": "A Rússia atravessa 11 fusos horários e cobre cerca de 17 milhões de km²."
+  },
+  {
+    "id": "t-m-001",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual elemento tem o símbolo químico 'Au'?",
+    "type": "multiple-choice",
+    "options": ["Prata", "Ouro", "Alumínio", "Argônio"],
+    "answer": "Ouro",
+    "explanation": "'Au' vem da palavra latina 'aurum,' que significa amanhecer brilhante.",
+    "funFact": "Todo o ouro já minerado caberia em um cubo de cerca de 22 metros de lado."
+  },
+  {
+    "id": "t-m-002",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual é o rio mais longo do mundo?",
+    "type": "multiple-choice",
+    "options": ["Amazonas", "Nilo", "Yangtzé", "Mississippi"],
+    "answer": "Nilo",
+    "explanation": "O Nilo tem cerca de 6.650 km no nordeste da África, embora alguns cientistas defendam que o Amazonas seja um pouco maior."
+  },
+  {
+    "id": "t-m-003",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual é a velocidade da luz no vácuo (aproximadamente)?",
+    "type": "multiple-choice",
+    "options": ["300.000 km/s", "150.000 km/s", "1.000.000 km/s", "30.000 km/s"],
+    "answer": "300.000 km/s",
+    "explanation": "A luz viaja a cerca de 299.792 km por segundo — rápido o suficiente pra dar 7 voltas na Terra em um segundo."
+  },
+  {
+    "id": "t-m-004",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual planeta tem mais luas?",
+    "type": "multiple-choice",
+    "options": ["Júpiter", "Saturno", "Urano", "Netuno"],
+    "answer": "Saturno",
+    "explanation": "Saturno tem pelo menos 146 luas confirmadas — passou Júpiter em 2023.",
+    "funFact": "A maior lua de Saturno, Titã, tem lagos de metano líquido."
+  },
+  {
+    "id": "t-m-005",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual é a língua nativa mais falada do mundo?",
+    "type": "multiple-choice",
+    "options": ["Inglês", "Espanhol", "Mandarim", "Hindi"],
+    "answer": "Mandarim",
+    "explanation": "O mandarim tem cerca de 940 milhões de falantes nativos, mais que qualquer outra língua."
+  },
+  {
+    "id": "t-m-006",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "O que significa DNA?",
+    "type": "multiple-choice",
+    "options": ["Ácido desoxirribonucleico", "Ácido dinitrogênio", "Ácido nuclear duplo", "Ácido desoxirribose nitrogenado"],
+    "answer": "Ácido desoxirribonucleico",
+    "explanation": "O DNA carrega as instruções genéticas de todos os organismos vivos conhecidos.",
+    "funFact": "Se você esticasse todo o DNA do seu corpo, ele iria do Sol e voltaria várias vezes."
+  },
+  {
+    "id": "t-m-007",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual artista pintou o teto da Capela Sistina?",
+    "type": "multiple-choice",
+    "options": ["Leonardo da Vinci", "Rafael", "Michelangelo", "Donatello"],
+    "answer": "Michelangelo",
+    "explanation": "Michelangelo pintou o teto entre 1508 e 1512, deitado em andaimes boa parte do tempo."
+  },
+  {
+    "id": "t-m-008",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual é o menor país do mundo em área?",
+    "type": "multiple-choice",
+    "options": ["Mônaco", "Vaticano", "San Marino", "Liechtenstein"],
+    "answer": "Vaticano",
+    "explanation": "O Vaticano tem só 0,49 km² — menor que muitos parques urbanos."
+  },
+  {
+    "id": "t-m-009",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual animal marinho tem três corações?",
+    "type": "multiple-choice",
+    "options": ["Tubarão", "Polvo", "Golfinho", "Tartaruga marinha"],
+    "answer": "Polvo",
+    "explanation": "Dois corações bombeiam sangue pelas guelras, e o terceiro bombeia para o resto do corpo.",
+    "funFact": "O sangue do polvo é azul porque usa cobre em vez de ferro para transportar oxigênio."
+  },
+  {
+    "id": "t-m-010",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual é o maior deserto do mundo?",
+    "type": "multiple-choice",
+    "options": ["Saara", "Gobi", "Antártico", "Arábico"],
+    "answer": "Antártico",
+    "explanation": "Desertos são definidos por baixa precipitação, não calor. A Antártida é o maior, com 14 milhões de km²."
+  },
+  {
+    "id": "t-m-011",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual instrumento tem 88 teclas?",
+    "type": "multiple-choice",
+    "options": ["Harpa", "Piano", "Acordeão", "Órgão"],
+    "answer": "Piano",
+    "explanation": "Um piano moderno padrão tem 52 teclas brancas e 36 pretas, totalizando 88."
+  },
+  {
+    "id": "t-m-012",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Qual é o símbolo químico do sódio?",
+    "type": "multiple-choice",
+    "options": ["So", "Sd", "Na", "S"],
+    "answer": "Na",
+    "explanation": "'Na' vem do latim 'natrium.' Muitos símbolos de elementos vêm dos nomes em latim ou grego."
+  },
+  {
+    "id": "t-h-001",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual é o elemento natural mais raro da Terra?",
+    "type": "multiple-choice",
+    "options": ["Astato", "Frâncio", "Promécio", "Tennessínio"],
+    "answer": "Astato",
+    "explanation": "Estima-se que existam menos de 30 gramas de astato na crosta terrestre em qualquer momento.",
+    "funFact": "O astato é tão radioativo que se vaporizaria caso se acumulasse o suficiente pra ser visto."
+  },
+  {
+    "id": "t-h-002",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual cientista propôs a teoria da relatividade geral?",
+    "type": "multiple-choice",
+    "options": ["Isaac Newton", "Niels Bohr", "Albert Einstein", "Max Planck"],
+    "answer": "Albert Einstein",
+    "explanation": "Einstein publicou a relatividade geral em 1915, redefinindo a gravidade como a curvatura do espaço-tempo."
+  },
+  {
+    "id": "t-h-003",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual é o ponto mais profundo conhecido do oceano?",
+    "type": "multiple-choice",
+    "options": ["Sirena Deep", "Challenger Deep", "Horizon Deep", "Tonga Deep"],
+    "answer": "Challenger Deep",
+    "explanation": "Challenger Deep, na Fossa das Marianas, chega a aproximadamente 10.935 metros — mais profundo que o Everest é alto."
+  },
+  {
+    "id": "t-h-004",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual planeta tem o dia mais longo (período de rotação)?",
+    "type": "multiple-choice",
+    "options": ["Mercúrio", "Vênus", "Marte", "Netuno"],
+    "answer": "Vênus",
+    "explanation": "Um único dia em Vênus dura cerca de 243 dias terrestres — mais longo que seu ano de 225 dias.",
+    "funFact": "Vênus também gira ao contrário em relação à maioria dos planetas."
+  },
+  {
+    "id": "t-h-005",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual mamífero põe ovos junto com o ornitorrinco?",
+    "type": "multiple-choice",
+    "options": ["Vombate", "Equidna", "Diabo-da-Tasmânia", "Capivara"],
+    "answer": "Equidna",
+    "explanation": "Equidnas e ornitorrincos são 'monotremados' — os únicos mamíferos vivos que põem ovos."
+  },
+  {
+    "id": "t-h-006",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual compositor escreveu 'As Quatro Estações'?",
+    "type": "multiple-choice",
+    "options": ["Bach", "Vivaldi", "Mozart", "Handel"],
+    "answer": "Vivaldi",
+    "explanation": "Antonio Vivaldi compôs esse conjunto de quatro concertos para violino por volta de 1720, cada um retratando uma estação."
+  },
+  {
+    "id": "t-h-007",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual é uma das maiores estrelas conhecidas em volume?",
+    "type": "multiple-choice",
+    "options": ["Betelgeuse", "VY Canis Majoris", "Stephenson 2-18", "UY Scuti"],
+    "answer": "Stephenson 2-18",
+    "explanation": "Estima-se que Stephenson 2-18 tenha mais de 2.000 vezes o raio do nosso Sol.",
+    "funFact": "Se colocada no nosso sistema solar, ela ultrapassaria a órbita de Saturno."
+  },
+  {
+    "id": "t-h-008",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Qual idioma tem um dos maiores dicionários do mundo?",
+    "type": "multiple-choice",
+    "options": ["Inglês", "Mandarim", "Coreano", "Tâmil"],
+    "answer": "Coreano",
+    "explanation": "O dicionário Woori Mal-saem tem mais de 1,1 milhão de palavras coreanas, sendo um dos maiores conhecidos."
+  },
+  {
+    "id": "w-e-001-fix",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Decifre o anagrama: ASEM",
+    "type": "text-input",
+    "answer": "MESA",
+    "explanation": "MESA — móvel onde nos reunimos para comer ou trabalhar."
+  },
+  {
+    "id": "w-e-001b",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Decifre o anagrama: AROS",
+    "type": "text-input",
+    "answer": "ROSA",
+    "explanation": "ROSA — uma flor delicada e perfumada."
+  },
+  {
+    "id": "w-e-002",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Decifre o anagrama: GERTI",
+    "type": "text-input",
+    "answer": "TIGRE",
+    "explanation": "TIGRE — o maior dos grandes felinos."
+  },
+  {
+    "id": "w-e-003",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Qual palavra é o oposto de 'antigo'?",
+    "type": "multiple-choice",
+    "options": ["Velho", "Moderno", "Passado", "Vintage"],
+    "answer": "Moderno",
+    "explanation": "'Moderno' se refere ao tempo presente ou recente, oposto de 'antigo.'"
+  },
+  {
+    "id": "w-e-004",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Qual palavra é sinônimo de 'feliz'?",
+    "type": "multiple-choice",
+    "options": ["Triste", "Alegre", "Cansado", "Nervoso"],
+    "answer": "Alegre",
+    "explanation": "'Feliz' e 'alegre' descrevem sentimentos de prazer ou contentamento."
+  },
+  {
+    "id": "w-e-005",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Decifre o anagrama: ANCEOO",
+    "type": "text-input",
+    "answer": "OCEANO",
+    "explanation": "OCEANO — uma vasta extensão de água salgada."
+  },
+  {
+    "id": "w-e-006",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Qual palavra significa um filhote de gato?",
+    "type": "multiple-choice",
+    "options": ["Cachorrinho", "Filhote", "Gatinho", "Bezerro"],
+    "answer": "Gatinho",
+    "explanation": "Gatinho é um gato jovem, geralmente com menos de um ano."
+  },
+  {
+    "id": "w-e-007",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Qual é o oposto de 'generoso'?",
+    "type": "multiple-choice",
+    "options": ["Bondoso", "Avarento", "Rico", "Calmo"],
+    "answer": "Avarento",
+    "explanation": "'Avarento' significa quem não gosta de partilhar ou dar, oposto de generoso."
+  },
+  {
+    "id": "w-m-001-fix",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Decifre o anagrama: REFOLS",
+    "type": "text-input",
+    "answer": "FLORES",
+    "explanation": "FLORES — partes coloridas e perfumadas das plantas."
+  },
+  {
+    "id": "w-m-001b",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Decifre o anagrama: AGOTSA",
+    "type": "text-input",
+    "answer": "GASTOS",
+    "explanation": "GASTOS — despesas, dinheiro que sai."
+  },
+  {
+    "id": "w-m-002",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "O que significa o prefixo 'tele-' (como em 'telefone')?",
+    "type": "multiple-choice",
+    "options": ["Som", "Distante", "Luz", "Tempo"],
+    "answer": "Distante",
+    "explanation": "'Tele-' vem do grego e significa 'longe.' Telefone leva a voz à distância.",
+    "funFact": "'Telescópio' literalmente significa 'ver longe.'"
+  },
+  {
+    "id": "w-m-003",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "O que significa o prefixo 'bio-' (como em 'biologia')?",
+    "type": "multiple-choice",
+    "options": ["Estudo", "Vida", "Corpo", "Pequeno"],
+    "answer": "Vida",
+    "explanation": "'Bio-' vem do grego 'bios' = vida. Biologia é literalmente 'estudo da vida.'"
+  },
+  {
+    "id": "w-m-004-fix",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Decifre o anagrama: ROVNINE",
+    "type": "text-input",
+    "answer": "INVERNO",
+    "explanation": "INVERNO — a estação mais fria do ano."
+  },
+  {
+    "id": "w-m-005",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Qual palavra significa 'medo de espaços fechados'?",
+    "type": "multiple-choice",
+    "options": ["Acrofobia", "Claustrofobia", "Aracnofobia", "Agorafobia"],
+    "answer": "Claustrofobia",
+    "explanation": "Do latim 'claustrum' (espaço fechado) e do grego 'phobos' (medo)."
+  },
+  {
+    "id": "w-m-006",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "O que significa a palavra 'efêmero'?",
+    "type": "multiple-choice",
+    "options": ["Eterno", "De curta duração", "Muito grande", "Escondido"],
+    "answer": "De curta duração",
+    "explanation": "Do grego 'ephemeros,' que significa 'que dura apenas um dia.' Usado para coisas passageiras."
+  },
+  {
+    "id": "w-m-007",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Qual palavra está escrita corretamente?",
+    "type": "multiple-choice",
+    "options": ["Excessão", "Exceção", "Eceção", "Excecão"],
+    "answer": "Exceção",
+    "explanation": "A grafia correta é 'exceção,' com X e Ç. Significa algo fora da regra geral."
+  },
+  {
+    "id": "w-m-008",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Decifre o anagrama: PESETAS",
+    "type": "text-input",
+    "answer": "TAPETES",
+    "explanation": "TAPETES — coberturas para o piso, feitas de tecido."
+  },
+  {
+    "id": "w-h-001",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "O que significa a palavra 'inefável'?",
+    "type": "multiple-choice",
+    "options": ["Que não pode ser dito ou descrito em palavras", "Sem importância", "Visível", "Pequeno"],
+    "answer": "Que não pode ser dito ou descrito em palavras",
+    "explanation": "Do latim 'ineffabilis,' algo tão grandioso ou intenso que palavras não conseguem expressar."
+  },
+  {
+    "id": "w-h-002",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "O que significa 'saudade'?",
+    "type": "multiple-choice",
+    "options": ["Sentimento de falta de algo ou alguém", "Tipo de comida", "Festa popular", "Tristeza profunda apenas"],
+    "answer": "Sentimento de falta de algo ou alguém",
+    "explanation": "Saudade é considerada uma palavra quase única do português — mistura de nostalgia, falta e afeto.",
+    "funFact": "Em 2004, foi eleita uma das palavras mais difíceis de traduzir do mundo."
+  },
+  {
+    "id": "w-h-003",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "Qual é o significado de 'petrichor'?",
+    "type": "multiple-choice",
+    "options": ["O cheiro de chuva em terra seca", "Um tipo de pedra", "Uma escrita antiga", "Um pássaro pequeno"],
+    "answer": "O cheiro de chuva em terra seca",
+    "explanation": "Cunhada em 1964 do grego 'petra' (pedra) + 'ichor' (líquido dos deuses).",
+    "funFact": "O cheiro vem de óleos liberados pelas plantas e de um composto chamado geosmina, no solo."
+  },
+  {
+    "id": "w-h-004-fix",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "Decifre o anagrama: ETAOMRS",
+    "type": "text-input",
+    "answer": "MAESTRO",
+    "explanation": "MAESTRO — quem rege uma orquestra."
+  },
+  {
+    "id": "w-h-005",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "O que significa 'serendipidade'?",
+    "type": "multiple-choice",
+    "options": ["Má sorte", "Descoberta agradável e inesperada", "Longa viagem", "Tristeza profunda"],
+    "answer": "Descoberta agradável e inesperada",
+    "explanation": "Cunhada por Horace Walpole em 1754, inspirada num conto persa chamado 'Os Três Príncipes de Serendip.'"
+  },
+  {
+    "id": "l-e-001",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "Se todas as rosas são flores, e algumas flores murcham rápido, podemos concluir que algumas rosas murcham rápido?",
+    "type": "multiple-choice",
+    "options": ["Sim, com certeza", "Não, não necessariamente", "Só as vermelhas", "Precisamos saber a cor"],
+    "answer": "Não, não necessariamente",
+    "explanation": "Rosas são flores, mas as flores que murcham rápido podem ser outras. A lógica não se transfere automaticamente."
+  },
+  {
+    "id": "l-e-002",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "Tom é mais alto que Jerry. Jerry é mais alto que Sam. Quem é o mais baixo?",
+    "type": "multiple-choice",
+    "options": ["Tom", "Jerry", "Sam", "Não dá pra saber"],
+    "answer": "Sam",
+    "explanation": "Tom > Jerry > Sam, então Sam é o mais baixo."
+  },
+  {
+    "id": "l-e-003",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "Qual letra vem a seguir: A, C, E, G, ?",
+    "type": "multiple-choice",
+    "options": ["H", "I", "J", "K"],
+    "answer": "I",
+    "explanation": "Pula uma letra cada vez: A(B)C(D)E(F)G(H)I."
+  },
+  {
+    "id": "l-e-004",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "Se hoje é quarta-feira, que dia será daqui a 10 dias?",
+    "type": "multiple-choice",
+    "options": ["Sábado", "Domingo", "Segunda", "Sexta"],
+    "answer": "Sábado",
+    "explanation": "10 dias = 1 semana + 3 dias. Quarta + 3 dias = Sábado."
+  },
+  {
+    "id": "l-e-005",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "Qual não pertence ao grupo: maçã, laranja, cenoura, banana?",
+    "type": "multiple-choice",
+    "options": ["Maçã", "Laranja", "Cenoura", "Banana"],
+    "answer": "Cenoura",
+    "explanation": "As outras são frutas; cenoura é um vegetal."
+  },
+  {
+    "id": "l-m-001",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Um agricultor tem 17 ovelhas. Todas menos 9 vão embora. Quantas restam?",
+    "type": "multiple-choice",
+    "options": ["8", "9", "17", "26"],
+    "answer": "9",
+    "explanation": "'Todas menos 9' significa que 9 ficaram."
+  },
+  {
+    "id": "l-m-002",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Ana é mais velha que Bruno. Carlos é mais novo que Bruno. Diana é mais velha que Ana. Quem é a mais velha?",
+    "type": "multiple-choice",
+    "options": ["Ana", "Bruno", "Carlos", "Diana"],
+    "answer": "Diana",
+    "explanation": "Diana > Ana > Bruno > Carlos. Diana é a mais velha."
+  },
+  {
+    "id": "l-m-003",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Um relógio marca 3:15. Qual o ângulo entre o ponteiro das horas e o dos minutos?",
+    "type": "multiple-choice",
+    "options": ["0°", "7,5°", "15°", "30°"],
+    "answer": "7,5°",
+    "explanation": "Às 3:15, o ponteiro dos minutos está em 90° e o das horas se moveu 7,5° além do 3 (15 min = 1/4 de hora, e o ponteiro das horas anda 30° por hora)."
+  },
+  {
+    "id": "l-m-004",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Encontre o número que falta: 2, 6, 12, 20, 30, ?",
+    "type": "multiple-choice",
+    "options": ["38", "40", "42", "44"],
+    "answer": "42",
+    "explanation": "As diferenças são 4, 6, 8, 10, 12. Então 30 + 12 = 42."
+  },
+  {
+    "id": "l-m-005",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Complete a analogia: Pássaro : Céu :: Peixe : ?",
+    "type": "multiple-choice",
+    "options": ["Barco", "Água", "Rede", "Areia"],
+    "answer": "Água",
+    "explanation": "Pássaros pertencem ao céu como peixes pertencem à água — descreve o habitat natural."
+  },
+  {
+    "id": "l-m-006",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Se você reorganizar as letras CIFAIPC, você obtém o nome de um:",
+    "type": "multiple-choice",
+    "options": ["Cidade", "País", "Oceano", "Rio"],
+    "answer": "Oceano",
+    "explanation": "CIFAIPC rearranja para PACIFIC — o Oceano Pacífico."
+  },
+  {
+    "id": "l-h-001",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "Três amigos dividem uma conta de 30 reais, cada um paga 10. O garçom percebe que a conta era de 25 e devolve 5 reais. Cada um pega 1 de volta e dão 2 de gorjeta. Cada um pagou 9 = 27. Mais os 2 da gorjeta = 29. Onde está o real que falta?",
+    "type": "multiple-choice",
+    "options": ["O garçom pegou", "Não falta real nenhum — a soma é enganosa", "Foi perdido no troco", "A conta era 26"],
+    "answer": "Não falta real nenhum — a soma é enganosa",
+    "explanation": "Os 27 já incluem os 2 da gorjeta. A conta correta é 25 (conta) + 2 (gorjeta) + 3 (devolvidos) = 30. Somar a gorjeta aos 27 é a pegadinha."
+  },
+  {
+    "id": "l-h-002",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "Qual número vem a seguir: 1, 11, 21, 1211, 111221, ?",
+    "type": "multiple-choice",
+    "options": ["112211", "312211", "211221", "122111"],
+    "answer": "312211",
+    "explanation": "Cada termo descreve o anterior. 111221 se lê 'três 1s, dois 2s, um 1' = 312211."
+  },
+  {
+    "id": "l-h-003",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "Duas pessoas têm os mesmos pais e nasceram no mesmo dia, mesmo ano — mas não são gêmeas. Como?",
+    "type": "multiple-choice",
+    "options": ["São adotadas", "Fazem parte de trigêmeos (ou mais)", "Pais diferentes", "É impossível"],
+    "answer": "Fazem parte de trigêmeos (ou mais)",
+    "explanation": "Se são trigêmeos, dividem detalhes de nascimento com um terceiro irmão, então 'gêmeos' não se aplica."
+  },
+  {
+    "id": "l-h-004",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "Encontre o próximo número: 1, 4, 9, 16, 25, ?",
+    "type": "multiple-choice",
+    "options": ["30", "32", "36", "49"],
+    "answer": "36",
+    "explanation": "São quadrados perfeitos: 1², 2², 3², 4², 5², 6² = 36."
+  },
+  {
+    "id": "n-e-001",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "Quanto é 7 × 8?",
+    "type": "multiple-choice",
+    "options": ["54", "56", "64", "48"],
+    "answer": "56",
+    "explanation": "7 × 8 = 56. Vale memorizar porque muita gente erra."
+  },
+  {
+    "id": "n-e-002",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "Quanto é 144 ÷ 12?",
+    "type": "multiple-choice",
+    "options": ["10", "11", "12", "14"],
+    "answer": "12",
+    "explanation": "144 = 12 × 12, então 144 ÷ 12 = 12."
+  },
+  {
+    "id": "n-e-003",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "Qual número vem a seguir: 2, 4, 6, 8, ?",
+    "type": "multiple-choice",
+    "options": ["9", "10", "11", "12"],
+    "answer": "10",
+    "explanation": "Números pares, aumentando de 2 em 2."
+  },
+  {
+    "id": "n-e-004",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "Quanto é 25% de 80?",
+    "type": "multiple-choice",
+    "options": ["15", "20", "25", "30"],
+    "answer": "20",
+    "explanation": "25% é um quarto. 80 ÷ 4 = 20."
+  },
+  {
+    "id": "n-e-005",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "Qual é o próximo número primo depois de 7?",
+    "type": "multiple-choice",
+    "options": ["8", "9", "11", "13"],
+    "answer": "11",
+    "explanation": "Primos têm só dois divisores: 1 e ele mesmo. 8, 9, 10 têm outros fatores. 11 é primo."
+  },
+  {
+    "id": "n-m-001",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "Qual número vem a seguir: 1, 1, 2, 3, 5, 8, ?",
+    "type": "multiple-choice",
+    "options": ["11", "12", "13", "15"],
+    "answer": "13",
+    "explanation": "A sequência de Fibonacci — cada número é a soma dos dois anteriores. 5 + 8 = 13.",
+    "funFact": "Os números de Fibonacci aparecem na natureza: girassóis, conchas de náutilo, pinhas."
+  },
+  {
+    "id": "n-m-002",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "Quanto é 15% de 200?",
+    "type": "multiple-choice",
+    "options": ["20", "25", "30", "35"],
+    "answer": "30",
+    "explanation": "10% de 200 = 20. Some metade disso (10) para 15%. Total: 30."
+  },
+  {
+    "id": "n-m-003",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "Encontre o número que falta: 3, 9, 27, 81, ?",
+    "type": "multiple-choice",
+    "options": ["162", "243", "324", "729"],
+    "answer": "243",
+    "explanation": "Cada número é o anterior × 3. 81 × 3 = 243."
+  },
+  {
+    "id": "n-m-004",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "Qual é a raiz quadrada de 169?",
+    "type": "multiple-choice",
+    "options": ["11", "12", "13", "14"],
+    "answer": "13",
+    "explanation": "13 × 13 = 169."
+  },
+  {
+    "id": "n-m-005",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "Qual número vem a seguir: 100, 50, 25, 12,5, ?",
+    "type": "multiple-choice",
+    "options": ["6", "6,25", "5", "7,5"],
+    "answer": "6,25",
+    "explanation": "Cada número é metade do anterior. 12,5 ÷ 2 = 6,25."
+  },
+  {
+    "id": "n-m-006",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "Se um triângulo tem ângulos de 60°, 60° e ?, qual é o terceiro ângulo?",
+    "type": "multiple-choice",
+    "options": ["30°", "60°", "90°", "120°"],
+    "answer": "60°",
+    "explanation": "Os ângulos de um triângulo somam 180°. 180 - 60 - 60 = 60. Esse é um triângulo equilátero."
+  },
+  {
+    "id": "n-h-001",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "Qual número vem a seguir: 2, 3, 5, 7, 11, 13, ?",
+    "type": "multiple-choice",
+    "options": ["15", "17", "19", "21"],
+    "answer": "17",
+    "explanation": "São números primos. Depois de 13, o próximo primo é 17 (já que 14, 15, 16 têm outros fatores)."
+  },
+  {
+    "id": "n-h-002",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "Qual o valor de 2^10?",
+    "type": "multiple-choice",
+    "options": ["512", "1024", "2048", "4096"],
+    "answer": "1024",
+    "explanation": "2^10 = 1024. Útil em computação — 1 kilobyte tecnicamente equivale a 1024 bytes."
+  },
+  {
+    "id": "n-h-003",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "Encontre o número que falta: 1, 4, 27, 256, ?",
+    "type": "multiple-choice",
+    "options": ["625", "1024", "3125", "5000"],
+    "answer": "3125",
+    "explanation": "n^n: 1^1=1, 2^2=4, 3^3=27, 4^4=256, 5^5=3125."
+  },
+  {
+    "id": "n-h-004",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "Quanto é 7! (7 fatorial)?",
+    "type": "multiple-choice",
+    "options": ["120", "720", "5040", "40320"],
+    "answer": "5040",
+    "explanation": "7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040."
+  },
+  {
+    "id": "v-e-001",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "Quantos lados tem um hexágono?",
+    "type": "multiple-choice",
+    "options": ["5", "6", "7", "8"],
+    "answer": "6",
+    "explanation": "'Hex' é grego para seis. Favos de mel são feitos de hexágonos porque eles se encaixam de forma eficiente."
+  },
+  {
+    "id": "v-e-002",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "Qual forma não tem cantos?",
+    "type": "multiple-choice",
+    "options": ["Triângulo", "Quadrado", "Círculo", "Pentágono"],
+    "answer": "Círculo",
+    "explanation": "O círculo é uma curva contínua sem cantos ou lados retos."
+  },
+  {
+    "id": "v-e-003",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "Quantas faces tem um cubo?",
+    "type": "multiple-choice",
+    "options": ["4", "5", "6", "8"],
+    "answer": "6",
+    "explanation": "Um cubo tem 6 faces quadradas, 12 arestas e 8 vértices."
+  },
+  {
+    "id": "v-e-004",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "Quantos lados tem um pentágono?",
+    "type": "multiple-choice",
+    "options": ["3", "4", "5", "6"],
+    "answer": "5",
+    "explanation": "'Penta' é grego para cinco."
+  },
+  {
+    "id": "v-e-005",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "Qual não pertence: triângulo, quadrado, círculo, pirâmide?",
+    "type": "multiple-choice",
+    "options": ["Triângulo", "Quadrado", "Círculo", "Pirâmide"],
+    "answer": "Pirâmide",
+    "explanation": "Os outros são formas 2D; pirâmide é 3D."
+  },
+  {
+    "id": "v-m-001",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "Quantas arestas tem um prisma triangular?",
+    "type": "multiple-choice",
+    "options": ["6", "8", "9", "12"],
+    "answer": "9",
+    "explanation": "Um prisma triangular tem 2 faces triangulares (3 arestas cada = 6) mais 3 arestas conectoras = 9 no total."
+  },
+  {
+    "id": "v-m-002",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "Se você girar a letra 'b' em 180 graus, com o que ela parece?",
+    "type": "multiple-choice",
+    "options": ["d", "p", "q", "b"],
+    "answer": "q",
+    "explanation": "Girar 'b' 180° (de cabeça pra baixo) inverte tanto na horizontal quanto na vertical, dando 'q'."
+  },
+  {
+    "id": "v-m-003",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "Quantos vértices tem um octaedro?",
+    "type": "multiple-choice",
+    "options": ["4", "6", "8", "12"],
+    "answer": "6",
+    "explanation": "Um octaedro tem 8 faces triangulares mas só 6 vértices e 12 arestas."
+  },
+  {
+    "id": "v-m-004",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "Um relógio refletido no espelho mostra 9:00. Que hora o relógio realmente marca?",
+    "type": "multiple-choice",
+    "options": ["3:00", "9:00", "6:00", "12:00"],
+    "answer": "3:00",
+    "explanation": "Um espelho inverte esquerda-direita. 9:00 num espelho aparece onde 3:00 realmente está."
+  },
+  {
+    "id": "v-m-005",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "Qual sólido 3D tem mais faces: cubo, tetraedro, octaedro ou pirâmide quadrada?",
+    "type": "multiple-choice",
+    "options": ["Cubo", "Tetraedro", "Octaedro", "Pirâmide quadrada"],
+    "answer": "Octaedro",
+    "explanation": "Octaedro tem 8 faces. Cubo tem 6, pirâmide quadrada tem 5, tetraedro tem 4."
+  },
+  {
+    "id": "v-h-001",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "Um cubo é pintado de azul em todas as faces, depois cortado em 27 cubos menores (3×3×3). Quantos cubos menores ficam SEM tinta em nenhuma face?",
+    "type": "multiple-choice",
+    "options": ["0", "1", "6", "8"],
+    "answer": "1",
+    "explanation": "Só o cubo do centro fica sem nenhuma face exposta — está completamente cercado."
+  },
+  {
+    "id": "v-h-002",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "Mesmo cubo pintado cortado em 27 pedaços — quantos têm tinta em exatamente 2 faces?",
+    "type": "multiple-choice",
+    "options": ["6", "8", "12", "20"],
+    "answer": "12",
+    "explanation": "Cubos das arestas (não os de canto, nem os do centro das faces, nem o central) têm 2 faces pintadas. Um cubo tem 12 arestas."
+  },
+  {
+    "id": "v-h-003",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "Quantas diagonais tem um hexágono regular?",
+    "type": "multiple-choice",
+    "options": ["6", "9", "12", "15"],
+    "answer": "9",
+    "explanation": "Fórmula: n(n-3)/2, onde n é o número de lados. 6(3)/2 = 9."
+  },
+  {
+    "id": "v-h-004",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "Uma formiga está num canto de um cubo. Qual o caminho mais curto pela superfície até o canto oposto, se cada aresta tem 1 unidade?",
+    "type": "multiple-choice",
+    "options": ["√2", "√3", "√5", "2"],
+    "answer": "√5",
+    "explanation": "Desdobrando duas faces adjacentes, forma-se um retângulo 1×2. A diagonal é √(1² + 2²) = √5 ≈ 2,24."
+  }
+]

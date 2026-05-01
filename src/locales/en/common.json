@@ -1,0 +1,136 @@
+{
+  "app": {
+    "title": "MindSpark",
+    "tagline": "A small, gentle moment for your mind."
+  },
+  "nav": {
+    "home": "Home",
+    "daily": "Daily",
+    "play": "Play",
+    "stats": "Stats",
+    "settings": "Settings",
+    "back": "Back"
+  },
+  "home": {
+    "greeting_morning": "Good morning",
+    "greeting_afternoon": "Good afternoon",
+    "greeting_evening": "Good evening",
+    "todays_set": "Today's set",
+    "todays_set_desc": "Five gentle puzzles, in your own time.",
+    "free_play": "Free play",
+    "free_play_desc": "Pick a category and a difficulty.",
+    "view_stats": "Your stats",
+    "completed_today": "You've finished today's set."
+  },
+  "puzzle": {
+    "submit": "Submit",
+    "next": "Next",
+    "skip": "Skip",
+    "show_answer": "Show answer",
+    "your_answer": "Your answer",
+    "type_here": "Type your answer",
+    "correct": "Nice — that's right",
+    "incorrect": "Not quite — here's the answer",
+    "answer_was": "The answer is",
+    "explanation": "Why",
+    "fun_fact": "Did you know",
+    "progress": "{{current}} of {{total}}",
+    "done_title": "Set complete",
+    "done_subtitle": "Five puzzles, done. Take a slow breath.",
+    "score_summary": "{{correct}} of {{total}} correct"
+  },
+  "categories": {
+    "trivia": "General knowledge",
+    "word": "Words",
+    "logic": "Logic",
+    "number": "Numbers",
+    "visual": "Shapes",
+    "all": "All"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "adaptive": "Adaptive"
+  },
+  "freeplay": {
+    "title": "Free play",
+    "pick_category": "Pick a category",
+    "pick_difficulty": "Pick a difficulty",
+    "start": "Begin",
+    "out_of_puzzles": "You've seen every puzzle in this set. Try another category or difficulty."
+  },
+  "breathe": {
+    "label": "Breathe",
+    "open": "Open breathing",
+    "in": "Breathe in",
+    "hold": "Hold",
+    "out": "Breathe out",
+    "done": "Done",
+    "pattern": "Pattern",
+    "patterns": {
+      "coherence": "Coherence",
+      "478": "Calm (4-7-8)",
+      "box": "Focus (4-4-4-4)"
+    },
+    "haptics": "Vibration on phase change"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "language_en": "English",
+    "language_pt": "Português",
+    "theme": "Theme",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
+    "theme_system": "System",
+    "sound": "Background sound",
+    "sound_off": "Off",
+    "sound_brown": "Brown noise",
+    "sound_drone": "432 Hz drone",
+    "sound_rain": "Gentle rain",
+    "volume": "Volume",
+    "haptics": "Vibration",
+    "reduced_motion": "Reduced motion",
+    "reduced_motion_system": "Follow system",
+    "reduced_motion_on": "On",
+    "reduced_motion_off": "Off",
+    "breathing_pattern": "Breathing pattern",
+    "default_difficulty": "Default difficulty",
+    "reset": "Reset progress",
+    "reset_confirm": "This will clear your stats. Continue?",
+    "reset_cancel": "Keep my progress",
+    "reset_confirm_yes": "Yes, reset"
+  },
+  "stats": {
+    "title": "Your progress",
+    "current_streak": "Current streak",
+    "days": "days",
+    "day": "day",
+    "total_solved": "Puzzles solved",
+    "accuracy": "Accuracy by category",
+    "no_data": "No data yet — play a puzzle to see your progress."
+  },
+  "streak": {
+    "current": "Current streak",
+    "welcome_back": "Welcome back. Let's start fresh.",
+    "first_day": "Day one — nice to see you here."
+  },
+  "install": {
+    "title": "Add MindSpark to your home screen",
+    "ios": "Tap the Share icon, then \"Add to Home Screen\".",
+    "android": "Open the menu and tap \"Install app\".",
+    "dismiss": "Maybe later"
+  },
+  "update": {
+    "title": "A fresh version is ready",
+    "reload": "Reload",
+    "later": "Later"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "close": "Close"
+  }
+}

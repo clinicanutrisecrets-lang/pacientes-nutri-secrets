@@ -35,8 +35,8 @@ export default {
       },
       keyframes: {
         breathe: {
-          '0%, 100%': { transform: 'scale(0.85)', opacity: '0.55' },
-          '50%': { transform: 'scale(1.15)', opacity: '0.85' },
+          '0%, 100%': { transform: 'scale(0.85)', opacity: '0.28' },
+          '50%': { transform: 'scale(1.15)', opacity: '0.42' },
         },
         softShake: {
           '0%, 100%': { transform: 'translateX(0)' },

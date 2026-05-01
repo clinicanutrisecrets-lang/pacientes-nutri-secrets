@@ -1,0 +1,136 @@
+{
+  "app": {
+    "title": "MindSpark",
+    "tagline": "Um momento pequeno e gentil para a sua mente."
+  },
+  "nav": {
+    "home": "Início",
+    "daily": "Diário",
+    "play": "Jogar",
+    "stats": "Progresso",
+    "settings": "Ajustes",
+    "back": "Voltar"
+  },
+  "home": {
+    "greeting_morning": "Bom dia",
+    "greeting_afternoon": "Boa tarde",
+    "greeting_evening": "Boa noite",
+    "todays_set": "Conjunto de hoje",
+    "todays_set_desc": "Cinco enigmas suaves, no seu tempo.",
+    "free_play": "Jogo livre",
+    "free_play_desc": "Escolha categoria e dificuldade.",
+    "view_stats": "Seu progresso",
+    "completed_today": "Você terminou o conjunto de hoje."
+  },
+  "puzzle": {
+    "submit": "Enviar",
+    "next": "Próximo",
+    "skip": "Pular",
+    "show_answer": "Ver resposta",
+    "your_answer": "Sua resposta",
+    "type_here": "Digite a resposta",
+    "correct": "Boa — é isso mesmo",
+    "incorrect": "Quase — veja a resposta",
+    "answer_was": "A resposta é",
+    "explanation": "Por quê",
+    "fun_fact": "Você sabia",
+    "progress": "{{current}} de {{total}}",
+    "done_title": "Conjunto concluído",
+    "done_subtitle": "Cinco enigmas, prontos. Respira fundo.",
+    "score_summary": "{{correct}} de {{total}} certos"
+  },
+  "categories": {
+    "trivia": "Conhecimentos gerais",
+    "word": "Palavras",
+    "logic": "Lógica",
+    "number": "Números",
+    "visual": "Formas",
+    "all": "Todas"
+  },
+  "difficulty": {
+    "easy": "Fácil",
+    "medium": "Médio",
+    "hard": "Difícil",
+    "adaptive": "Adaptativo"
+  },
+  "freeplay": {
+    "title": "Jogo livre",
+    "pick_category": "Escolha uma categoria",
+    "pick_difficulty": "Escolha uma dificuldade",
+    "start": "Começar",
+    "out_of_puzzles": "Você já viu todos os enigmas deste grupo. Tente outra categoria ou dificuldade."
+  },
+  "breathe": {
+    "label": "Respirar",
+    "open": "Abrir respiração",
+    "in": "Inspire",
+    "hold": "Segure",
+    "out": "Expire",
+    "done": "Pronto",
+    "pattern": "Padrão",
+    "patterns": {
+      "coherence": "Coerência",
+      "478": "Calma (4-7-8)",
+      "box": "Foco (4-4-4-4)"
+    },
+    "haptics": "Vibração ao trocar de fase"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "language": "Idioma",
+    "language_en": "English",
+    "language_pt": "Português",
+    "theme": "Tema",
+    "theme_light": "Claro",
+    "theme_dark": "Escuro",
+    "theme_system": "Sistema",
+    "sound": "Som de fundo",
+    "sound_off": "Desligado",
+    "sound_brown": "Ruído marrom",
+    "sound_drone": "Drone 432 Hz",
+    "sound_rain": "Chuva suave",
+    "volume": "Volume",
+    "haptics": "Vibração",
+    "reduced_motion": "Movimento reduzido",
+    "reduced_motion_system": "Seguir o sistema",
+    "reduced_motion_on": "Ligado",
+    "reduced_motion_off": "Desligado",
+    "breathing_pattern": "Padrão de respiração",
+    "default_difficulty": "Dificuldade padrão",
+    "reset": "Zerar progresso",
+    "reset_confirm": "Isso vai apagar seu progresso. Quer mesmo continuar?",
+    "reset_cancel": "Manter meu progresso",
+    "reset_confirm_yes": "Sim, zerar"
+  },
+  "stats": {
+    "title": "Seu progresso",
+    "current_streak": "Sequência atual",
+    "days": "dias",
+    "day": "dia",
+    "total_solved": "Enigmas resolvidos",
+    "accuracy": "Precisão por categoria",
+    "no_data": "Ainda sem dados — jogue um enigma para ver seu progresso."
+  },
+  "streak": {
+    "current": "Sequência atual",
+    "welcome_back": "Que bom te ver de volta. Vamos começar fresco.",
+    "first_day": "Dia um — que bom você estar aqui."
+  },
+  "install": {
+    "title": "Adicione o MindSpark à tela inicial",
+    "ios": "Toque no ícone de Compartilhar e depois em \"Adicionar à Tela de Início\".",
+    "android": "Abra o menu e toque em \"Instalar app\".",
+    "dismiss": "Talvez depois"
+  },
+  "update": {
+    "title": "Uma versão nova está pronta",
+    "reload": "Recarregar",
+    "later": "Depois"
+  },
+  "common": {
+    "yes": "Sim",
+    "no": "Não",
+    "cancel": "Cancelar",
+    "close": "Fechar"
+  }
+}

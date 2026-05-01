@@ -1,0 +1,960 @@
+[
+  {
+    "id": "t-e-001",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Which planet in our solar system is known as the Red Planet?",
+    "type": "multiple-choice",
+    "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+    "answer": "Mars",
+    "explanation": "Mars looks red because its surface is covered in iron oxide — essentially rust.",
+    "funFact": "A day on Mars is only 37 minutes longer than a day on Earth."
+  },
+  {
+    "id": "t-e-002",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "What is the largest ocean on Earth?",
+    "type": "multiple-choice",
+    "options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+    "answer": "Pacific",
+    "explanation": "The Pacific Ocean covers about a third of Earth's surface — larger than all the continents combined.",
+    "funFact": "Its name comes from the Latin word 'pacificus,' meaning peaceful."
+  },
+  {
+    "id": "t-e-003",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "How many continents are there?",
+    "type": "multiple-choice",
+    "options": ["5", "6", "7", "8"],
+    "answer": "7",
+    "explanation": "Africa, Antarctica, Asia, Australia, Europe, North America, and South America."
+  },
+  {
+    "id": "t-e-004",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "What gas do plants absorb from the air to make food?",
+    "type": "multiple-choice",
+    "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+    "answer": "Carbon dioxide",
+    "explanation": "Plants take in CO2 and use sunlight to turn it into sugar, releasing oxygen as a byproduct.",
+    "funFact": "A single mature tree can absorb around 22 kg of CO2 per year."
+  },
+  {
+    "id": "t-e-005",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Which animal is the largest mammal on Earth?",
+    "type": "multiple-choice",
+    "options": ["African elephant", "Blue whale", "Giraffe", "Polar bear"],
+    "answer": "Blue whale",
+    "explanation": "Blue whales can reach 30 metres long and weigh up to 200 tonnes.",
+    "funFact": "A blue whale's heart is roughly the size of a small car."
+  },
+  {
+    "id": "t-e-006",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "What is the smallest unit of life?",
+    "type": "multiple-choice",
+    "options": ["Atom", "Cell", "Molecule", "Tissue"],
+    "answer": "Cell",
+    "explanation": "Every living thing is made of one or more cells, which carry out all the basic functions of life."
+  },
+  {
+    "id": "t-e-007",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "Which mountain is the tallest above sea level?",
+    "type": "multiple-choice",
+    "options": ["K2", "Kilimanjaro", "Everest", "Denali"],
+    "answer": "Everest",
+    "explanation": "Mount Everest stands at 8,849 metres above sea level on the border of Nepal and Tibet.",
+    "funFact": "Everest grows about 4mm taller every year due to tectonic activity."
+  },
+  {
+    "id": "t-e-008",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "What is the hardest natural substance on Earth?",
+    "type": "multiple-choice",
+    "options": ["Gold", "Iron", "Diamond", "Quartz"],
+    "answer": "Diamond",
+    "explanation": "Diamonds are made of carbon atoms arranged in an extremely strong crystal structure."
+  },
+  {
+    "id": "t-e-009",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "How many bones does an adult human have?",
+    "type": "multiple-choice",
+    "options": ["186", "206", "226", "246"],
+    "answer": "206",
+    "explanation": "Adults have 206 bones, but babies are born with about 270 — many fuse together as we grow.",
+    "funFact": "More than half of your bones are in your hands and feet."
+  },
+  {
+    "id": "t-e-010",
+    "category": "trivia",
+    "difficulty": "easy",
+    "question": "What is the largest country by land area?",
+    "type": "multiple-choice",
+    "options": ["China", "Canada", "United States", "Russia"],
+    "answer": "Russia",
+    "explanation": "Russia spans 11 time zones and covers about 17 million square kilometres."
+  },
+  {
+    "id": "t-m-001",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Which element has the chemical symbol 'Au'?",
+    "type": "multiple-choice",
+    "options": ["Silver", "Gold", "Aluminum", "Argon"],
+    "answer": "Gold",
+    "explanation": "'Au' comes from the Latin word 'aurum,' meaning shining dawn.",
+    "funFact": "All the gold ever mined would fit into a cube about 22 metres on each side."
+  },
+  {
+    "id": "t-m-002",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Which is the longest river in the world?",
+    "type": "multiple-choice",
+    "options": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+    "answer": "Nile",
+    "explanation": "The Nile flows about 6,650 km through northeastern Africa, though some scientists argue the Amazon is slightly longer."
+  },
+  {
+    "id": "t-m-003",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "What is the speed of light in a vacuum (approximately)?",
+    "type": "multiple-choice",
+    "options": ["300,000 km/s", "150,000 km/s", "1,000,000 km/s", "30,000 km/s"],
+    "answer": "300,000 km/s",
+    "explanation": "Light travels at about 299,792 km per second — fast enough to circle Earth 7 times in one second."
+  },
+  {
+    "id": "t-m-004",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Which planet has the most moons?",
+    "type": "multiple-choice",
+    "options": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+    "answer": "Saturn",
+    "explanation": "Saturn has at least 146 confirmed moons — it overtook Jupiter in 2023.",
+    "funFact": "Saturn's largest moon, Titan, has lakes of liquid methane."
+  },
+  {
+    "id": "t-m-005",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "What is the most spoken native language in the world?",
+    "type": "multiple-choice",
+    "options": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
+    "answer": "Mandarin Chinese",
+    "explanation": "Mandarin has roughly 940 million native speakers, more than any other language."
+  },
+  {
+    "id": "t-m-006",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "What does DNA stand for?",
+    "type": "multiple-choice",
+    "options": ["Deoxyribonucleic acid", "Dinitrogen acid", "Dual nuclear acid", "Deoxyribose nitrogen acid"],
+    "answer": "Deoxyribonucleic acid",
+    "explanation": "DNA carries the genetic instructions for all known living organisms.",
+    "funFact": "If you stretched out all the DNA in your body, it would reach the sun and back many times."
+  },
+  {
+    "id": "t-m-007",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Which artist painted the ceiling of the Sistine Chapel?",
+    "type": "multiple-choice",
+    "options": ["Leonardo da Vinci", "Raphael", "Michelangelo", "Donatello"],
+    "answer": "Michelangelo",
+    "explanation": "Michelangelo painted the ceiling between 1508 and 1512, lying on scaffolding for much of it."
+  },
+  {
+    "id": "t-m-008",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "What is the smallest country in the world by area?",
+    "type": "multiple-choice",
+    "options": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+    "answer": "Vatican City",
+    "explanation": "Vatican City is just 0.49 square kilometres — smaller than many city parks."
+  },
+  {
+    "id": "t-m-009",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Which sea creature has three hearts?",
+    "type": "multiple-choice",
+    "options": ["Shark", "Octopus", "Dolphin", "Sea turtle"],
+    "answer": "Octopus",
+    "explanation": "Two hearts pump blood through the gills, and the third pumps blood to the rest of the body.",
+    "funFact": "Octopus blood is blue because it uses copper instead of iron to carry oxygen."
+  },
+  {
+    "id": "t-m-010",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "What is the largest desert in the world?",
+    "type": "multiple-choice",
+    "options": ["Sahara", "Gobi", "Antarctic", "Arabian"],
+    "answer": "Antarctic",
+    "explanation": "Deserts are defined by low precipitation, not heat. Antarctica is the largest at 14 million sq km."
+  },
+  {
+    "id": "t-m-011",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "Which instrument has 88 keys?",
+    "type": "multiple-choice",
+    "options": ["Harp", "Piano", "Accordion", "Organ"],
+    "answer": "Piano",
+    "explanation": "A standard modern piano has 52 white keys and 36 black keys, totaling 88."
+  },
+  {
+    "id": "t-m-012",
+    "category": "trivia",
+    "difficulty": "medium",
+    "question": "What is the chemical symbol for sodium?",
+    "type": "multiple-choice",
+    "options": ["So", "Sd", "Na", "S"],
+    "answer": "Na",
+    "explanation": "'Na' comes from the Latin word 'natrium.' Many element symbols come from their Latin or Greek names."
+  },
+  {
+    "id": "t-h-001",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "What is the rarest naturally occurring element on Earth?",
+    "type": "multiple-choice",
+    "options": ["Astatine", "Francium", "Promethium", "Tennessine"],
+    "answer": "Astatine",
+    "explanation": "It's estimated that less than 30 grams of astatine exist in the Earth's crust at any one time.",
+    "funFact": "Astatine is so radioactive it would vaporize itself if you collected enough to see."
+  },
+  {
+    "id": "t-h-002",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Which scientist proposed the theory of general relativity?",
+    "type": "multiple-choice",
+    "options": ["Isaac Newton", "Niels Bohr", "Albert Einstein", "Max Planck"],
+    "answer": "Albert Einstein",
+    "explanation": "Einstein published general relativity in 1915, redefining gravity as the curvature of spacetime."
+  },
+  {
+    "id": "t-h-003",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "What is the deepest known point in the ocean?",
+    "type": "multiple-choice",
+    "options": ["Sirena Deep", "Challenger Deep", "Horizon Deep", "Tonga Deep"],
+    "answer": "Challenger Deep",
+    "explanation": "Challenger Deep in the Mariana Trench reaches roughly 10,935 metres below sea level — deeper than Everest is tall."
+  },
+  {
+    "id": "t-h-004",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Which planet has the longest day (rotation period)?",
+    "type": "multiple-choice",
+    "options": ["Mercury", "Venus", "Mars", "Neptune"],
+    "answer": "Venus",
+    "explanation": "A single day on Venus lasts about 243 Earth days — longer than its year of 225 Earth days.",
+    "funFact": "Venus also rotates backwards compared to most planets."
+  },
+  {
+    "id": "t-h-005",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Which mammal lays eggs alongside the platypus?",
+    "type": "multiple-choice",
+    "options": ["Wombat", "Echidna", "Tasmanian devil", "Capybara"],
+    "answer": "Echidna",
+    "explanation": "Echidnas and platypuses are 'monotremes' — the only egg-laying mammals alive today."
+  },
+  {
+    "id": "t-h-006",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Which composer wrote 'The Four Seasons'?",
+    "type": "multiple-choice",
+    "options": ["Bach", "Vivaldi", "Mozart", "Handel"],
+    "answer": "Vivaldi",
+    "explanation": "Antonio Vivaldi composed this set of four violin concertos around 1720, each depicting a season."
+  },
+  {
+    "id": "t-h-007",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "What is one of the largest known stars by volume?",
+    "type": "multiple-choice",
+    "options": ["Betelgeuse", "VY Canis Majoris", "Stephenson 2-18", "UY Scuti"],
+    "answer": "Stephenson 2-18",
+    "explanation": "Stephenson 2-18 is estimated to be over 2,000 times the radius of our Sun.",
+    "funFact": "If placed in our solar system, it would extend past Saturn's orbit."
+  },
+  {
+    "id": "t-h-008",
+    "category": "trivia",
+    "difficulty": "hard",
+    "question": "Which language has one of the largest dictionaries in the world?",
+    "type": "multiple-choice",
+    "options": ["English", "Mandarin", "Korean", "Tamil"],
+    "answer": "Korean",
+    "explanation": "The Woori Mal-saem dictionary contains over 1.1 million Korean words, making it one of the largest known."
+  },
+  {
+    "id": "w-e-001",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Unscramble: NLEMO",
+    "type": "text-input",
+    "answer": "LEMON",
+    "explanation": "The letters rearrange to spell LEMON, a citrus fruit."
+  },
+  {
+    "id": "w-e-002",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Unscramble: TGREI",
+    "type": "text-input",
+    "answer": "TIGER",
+    "explanation": "TIGER — the largest of the big cats."
+  },
+  {
+    "id": "w-e-003",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "What word means the opposite of 'ancient'?",
+    "type": "multiple-choice",
+    "options": ["Old", "Modern", "Past", "Vintage"],
+    "answer": "Modern",
+    "explanation": "'Modern' refers to the present or recent times, the opposite of 'ancient.'"
+  },
+  {
+    "id": "w-e-004",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Which word is a synonym for 'happy'?",
+    "type": "multiple-choice",
+    "options": ["Gloomy", "Joyful", "Tired", "Nervous"],
+    "answer": "Joyful",
+    "explanation": "Both 'happy' and 'joyful' describe feelings of pleasure or contentment."
+  },
+  {
+    "id": "w-e-005",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Unscramble: AENOC",
+    "type": "text-input",
+    "answer": "OCEAN",
+    "explanation": "OCEAN — a vast body of saltwater."
+  },
+  {
+    "id": "w-e-006",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "Which word means a baby cat?",
+    "type": "multiple-choice",
+    "options": ["Puppy", "Cub", "Kitten", "Calf"],
+    "answer": "Kitten",
+    "explanation": "A kitten is a young cat, usually under one year old."
+  },
+  {
+    "id": "w-e-007",
+    "category": "word",
+    "difficulty": "easy",
+    "question": "What is the opposite of 'generous'?",
+    "type": "multiple-choice",
+    "options": ["Kind", "Stingy", "Wealthy", "Calm"],
+    "answer": "Stingy",
+    "explanation": "'Stingy' means unwilling to share or give, the opposite of generous."
+  },
+  {
+    "id": "w-m-001",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Unscramble: ELOTPNAE",
+    "type": "text-input",
+    "answer": "ANTELOPE",
+    "explanation": "ANTELOPE — a swift-running deer-like animal found in Africa and Asia."
+  },
+  {
+    "id": "w-m-002",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "What does the prefix 'tele-' mean (as in 'telephone')?",
+    "type": "multiple-choice",
+    "options": ["Sound", "Distant", "Light", "Time"],
+    "answer": "Distant",
+    "explanation": "'Tele-' comes from Greek meaning 'far off.' A telephone carries voice across distance.",
+    "funFact": "'Telescope' literally means 'to see far.'"
+  },
+  {
+    "id": "w-m-003",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "What is a group of crows called?",
+    "type": "multiple-choice",
+    "options": ["A flock", "A pack", "A murder", "A herd"],
+    "answer": "A murder",
+    "explanation": "A group of crows is poetically called 'a murder' — origin debated, possibly from old folklore."
+  },
+  {
+    "id": "w-m-004",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Unscramble: HUTNDER",
+    "type": "text-input",
+    "answer": "THUNDER",
+    "explanation": "THUNDER — the sound that follows lightning."
+  },
+  {
+    "id": "w-m-005",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Which word means 'fear of small spaces'?",
+    "type": "multiple-choice",
+    "options": ["Acrophobia", "Claustrophobia", "Arachnophobia", "Agoraphobia"],
+    "answer": "Claustrophobia",
+    "explanation": "From Latin 'claustrum' (enclosed space) and Greek 'phobos' (fear)."
+  },
+  {
+    "id": "w-m-006",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "What does the word 'ephemeral' mean?",
+    "type": "multiple-choice",
+    "options": ["Lasting forever", "Lasting a short time", "Very large", "Hidden"],
+    "answer": "Lasting a short time",
+    "explanation": "From Greek 'ephemeros,' meaning 'lasting only a day.' Often used for fleeting things."
+  },
+  {
+    "id": "w-m-007",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Which word is spelled correctly?",
+    "type": "multiple-choice",
+    "options": ["Recieve", "Receive", "Receeve", "Receve"],
+    "answer": "Receive",
+    "explanation": "Remember the rule: 'i before e, except after c.'"
+  },
+  {
+    "id": "w-m-008",
+    "category": "word",
+    "difficulty": "medium",
+    "question": "Unscramble: ASTRPCE",
+    "type": "text-input",
+    "answer": "CARPETS",
+    "explanation": "CARPETS — floor coverings made of woven fabric."
+  },
+  {
+    "id": "w-h-001",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "What does the word 'sesquipedalian' mean?",
+    "type": "multiple-choice",
+    "options": ["Characterized by long words", "A type of insect", "A short poem", "A musical term"],
+    "answer": "Characterized by long words",
+    "explanation": "'Sesquipedalian' itself is a long word meaning 'characterized by long words.' Beautifully self-referential."
+  },
+  {
+    "id": "w-h-002",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "Unscramble: RUTPCMOE",
+    "type": "text-input",
+    "answer": "COMPUTER",
+    "explanation": "COMPUTER — a device that processes information."
+  },
+  {
+    "id": "w-h-002b",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "Unscramble: HALPETEN",
+    "type": "text-input",
+    "answer": "ELEPHANT",
+    "explanation": "ELEPHANT — the largest land mammal alive today."
+  },
+  {
+    "id": "w-h-003",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "What is the meaning of 'petrichor'?",
+    "type": "multiple-choice",
+    "options": ["The smell of rain on dry earth", "A type of stone", "An ancient script", "A small bird"],
+    "answer": "The smell of rain on dry earth",
+    "explanation": "Coined in 1964 from Greek 'petra' (stone) + 'ichor' (the fluid of the gods).",
+    "funFact": "The smell comes from oils released by plants and a compound called geosmin in soil."
+  },
+  {
+    "id": "w-h-004",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "Which is a real word for 'fear of long words'?",
+    "type": "multiple-choice",
+    "options": ["Glossophobia", "Logophobia", "Hippopotomonstrosesquippedaliophobia", "Verbaphobia"],
+    "answer": "Hippopotomonstrosesquippedaliophobia",
+    "explanation": "Yes, the word for fear of long words is itself ironically very long."
+  },
+  {
+    "id": "w-h-005",
+    "category": "word",
+    "difficulty": "hard",
+    "question": "What does 'serendipity' mean?",
+    "type": "multiple-choice",
+    "options": ["Bad luck", "A pleasant surprise discovery", "A long journey", "Deep sadness"],
+    "answer": "A pleasant surprise discovery",
+    "explanation": "Coined by Horace Walpole in 1754, inspired by a Persian fairy tale called 'The Three Princes of Serendip.'"
+  },
+  {
+    "id": "l-e-001",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "If all roses are flowers, and some flowers fade quickly, can we conclude that some roses fade quickly?",
+    "type": "multiple-choice",
+    "options": ["Yes, definitely", "No, not necessarily", "Only red roses", "We need more information about color"],
+    "answer": "No, not necessarily",
+    "explanation": "Roses are flowers, but the flowers that fade quickly might be different ones. The logic doesn't carry over."
+  },
+  {
+    "id": "l-e-002",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "Tom is taller than Jerry. Jerry is taller than Sam. Who is shortest?",
+    "type": "multiple-choice",
+    "options": ["Tom", "Jerry", "Sam", "Cannot tell"],
+    "answer": "Sam",
+    "explanation": "Tom > Jerry > Sam, so Sam is shortest."
+  },
+  {
+    "id": "l-e-003",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "What comes next: A, C, E, G, ?",
+    "type": "multiple-choice",
+    "options": ["H", "I", "J", "K"],
+    "answer": "I",
+    "explanation": "Skip one letter each time: A(B)C(D)E(F)G(H)I."
+  },
+  {
+    "id": "l-e-004",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "If today is Wednesday, what day will it be in 10 days?",
+    "type": "multiple-choice",
+    "options": ["Saturday", "Sunday", "Monday", "Friday"],
+    "answer": "Saturday",
+    "explanation": "10 days = 1 week + 3 days. Wednesday + 3 days = Saturday."
+  },
+  {
+    "id": "l-e-005",
+    "category": "logic",
+    "difficulty": "easy",
+    "question": "Which doesn't belong: apple, orange, carrot, banana?",
+    "type": "multiple-choice",
+    "options": ["Apple", "Orange", "Carrot", "Banana"],
+    "answer": "Carrot",
+    "explanation": "The others are fruits; carrot is a vegetable."
+  },
+  {
+    "id": "l-m-001",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "A farmer has 17 sheep. All but 9 wander off. How many remain?",
+    "type": "multiple-choice",
+    "options": ["8", "9", "17", "26"],
+    "answer": "9",
+    "explanation": "'All but 9' means 9 are left."
+  },
+  {
+    "id": "l-m-002",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Anna is older than Ben. Carl is younger than Ben. Diana is older than Anna. Who is the oldest?",
+    "type": "multiple-choice",
+    "options": ["Anna", "Ben", "Carl", "Diana"],
+    "answer": "Diana",
+    "explanation": "Diana > Anna > Ben > Carl. Diana is the oldest."
+  },
+  {
+    "id": "l-m-003",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "A clock shows 3:15. What is the angle between the hour and minute hands?",
+    "type": "multiple-choice",
+    "options": ["0°", "7.5°", "15°", "30°"],
+    "answer": "7.5°",
+    "explanation": "At 3:15, the minute hand is at 90° and the hour hand has moved 7.5° past 3 (since 15 minutes = 1/4 of an hour, and the hour hand moves 30° per hour)."
+  },
+  {
+    "id": "l-m-004",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Find the missing number: 2, 6, 12, 20, 30, ?",
+    "type": "multiple-choice",
+    "options": ["38", "40", "42", "44"],
+    "answer": "42",
+    "explanation": "Differences are 4, 6, 8, 10, 12. So 30 + 12 = 42."
+  },
+  {
+    "id": "l-m-005",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "Which item completes the analogy? Bird : Sky :: Fish : ?",
+    "type": "multiple-choice",
+    "options": ["Boat", "Water", "Net", "Sand"],
+    "answer": "Water",
+    "explanation": "Birds belong in the sky as fish belong in water — both describe an animal's natural habitat."
+  },
+  {
+    "id": "l-m-006",
+    "category": "logic",
+    "difficulty": "medium",
+    "question": "If you rearrange the letters CIFAIPC, you get the name of an:",
+    "type": "multiple-choice",
+    "options": ["City", "Country", "Ocean", "River"],
+    "answer": "Ocean",
+    "explanation": "CIFAIPC rearranges to PACIFIC — the Pacific Ocean."
+  },
+  {
+    "id": "l-h-001",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "Three friends share a 30-dollar bill, each paying 10. The waiter realizes the bill should have been 25, so returns 5 dollars. Each friend takes back 1, and they tip the waiter 2. Each paid 9 = 27. Plus the waiter's 2 = 29. Where's the missing dollar?",
+    "type": "multiple-choice",
+    "options": ["The waiter took it", "There is no missing dollar — the math is misleading", "It was lost in change", "The bill was actually 26"],
+    "answer": "There is no missing dollar — the math is misleading",
+    "explanation": "The 27 already includes the 2 tip. The correct math is 25 (bill) + 2 (tip) + 3 (returned) = 30. Adding the tip to the 27 is the trick."
+  },
+  {
+    "id": "l-h-002",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "What number comes next: 1, 11, 21, 1211, 111221, ?",
+    "type": "multiple-choice",
+    "options": ["112211", "312211", "211221", "122111"],
+    "answer": "312211",
+    "explanation": "Each term describes the previous one. 111221 is read as 'three 1s, two 2s, one 1' = 312211."
+  },
+  {
+    "id": "l-h-003",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "Two people share the same parents and were born on the same day, same year — but they're not twins. How is this possible?",
+    "type": "multiple-choice",
+    "options": ["They are adopted", "They are part of triplets (or more)", "Different fathers", "It's impossible"],
+    "answer": "They are part of triplets (or more)",
+    "explanation": "If they're triplets, they share birth details with a third sibling, so 'twins' wouldn't apply."
+  },
+  {
+    "id": "l-h-004",
+    "category": "logic",
+    "difficulty": "hard",
+    "question": "Find the next number: 1, 4, 9, 16, 25, ?",
+    "type": "multiple-choice",
+    "options": ["30", "32", "36", "49"],
+    "answer": "36",
+    "explanation": "These are perfect squares: 1², 2², 3², 4², 5², 6² = 36."
+  },
+  {
+    "id": "n-e-001",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "What is 7 × 8?",
+    "type": "multiple-choice",
+    "options": ["54", "56", "64", "48"],
+    "answer": "56",
+    "explanation": "7 × 8 = 56. A useful one to memorize since it's commonly missed."
+  },
+  {
+    "id": "n-e-002",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "What is 144 ÷ 12?",
+    "type": "multiple-choice",
+    "options": ["10", "11", "12", "14"],
+    "answer": "12",
+    "explanation": "144 = 12 × 12, so 144 ÷ 12 = 12."
+  },
+  {
+    "id": "n-e-003",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "What comes next: 2, 4, 6, 8, ?",
+    "type": "multiple-choice",
+    "options": ["9", "10", "11", "12"],
+    "answer": "10",
+    "explanation": "Even numbers, increasing by 2 each time."
+  },
+  {
+    "id": "n-e-004",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "What is 25% of 80?",
+    "type": "multiple-choice",
+    "options": ["15", "20", "25", "30"],
+    "answer": "20",
+    "explanation": "25% means one quarter. 80 ÷ 4 = 20."
+  },
+  {
+    "id": "n-e-005",
+    "category": "number",
+    "difficulty": "easy",
+    "question": "What is the next prime number after 7?",
+    "type": "multiple-choice",
+    "options": ["8", "9", "11", "13"],
+    "answer": "11",
+    "explanation": "Primes have only two divisors: 1 and themselves. 8, 9, 10 all have other factors. 11 is prime."
+  },
+  {
+    "id": "n-m-001",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "What comes next: 1, 1, 2, 3, 5, 8, ?",
+    "type": "multiple-choice",
+    "options": ["11", "12", "13", "15"],
+    "answer": "13",
+    "explanation": "The Fibonacci sequence — each number is the sum of the two before it. 5 + 8 = 13.",
+    "funFact": "Fibonacci numbers appear in nature, from sunflower seeds to nautilus shells."
+  },
+  {
+    "id": "n-m-002",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "What is 15% of 200?",
+    "type": "multiple-choice",
+    "options": ["20", "25", "30", "35"],
+    "answer": "30",
+    "explanation": "10% of 200 = 20. Add half of that (10) for 15%. Total: 30."
+  },
+  {
+    "id": "n-m-003",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "Find the missing number: 3, 9, 27, 81, ?",
+    "type": "multiple-choice",
+    "options": ["162", "243", "324", "729"],
+    "answer": "243",
+    "explanation": "Each number is the previous × 3. 81 × 3 = 243."
+  },
+  {
+    "id": "n-m-004",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "What is the square root of 169?",
+    "type": "multiple-choice",
+    "options": ["11", "12", "13", "14"],
+    "answer": "13",
+    "explanation": "13 × 13 = 169."
+  },
+  {
+    "id": "n-m-005",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "What comes next: 100, 50, 25, 12.5, ?",
+    "type": "multiple-choice",
+    "options": ["6", "6.25", "5", "7.5"],
+    "answer": "6.25",
+    "explanation": "Each number is half the previous. 12.5 ÷ 2 = 6.25."
+  },
+  {
+    "id": "n-m-006",
+    "category": "number",
+    "difficulty": "medium",
+    "question": "If a triangle has angles 60°, 60°, and ?, what is the third angle?",
+    "type": "multiple-choice",
+    "options": ["30°", "60°", "90°", "120°"],
+    "answer": "60°",
+    "explanation": "Triangle angles sum to 180°. 180 - 60 - 60 = 60. This is an equilateral triangle."
+  },
+  {
+    "id": "n-h-001",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "What comes next: 2, 3, 5, 7, 11, 13, ?",
+    "type": "multiple-choice",
+    "options": ["15", "17", "19", "21"],
+    "answer": "17",
+    "explanation": "These are prime numbers. After 13, the next prime is 17 (since 14, 15, 16 all have factors)."
+  },
+  {
+    "id": "n-h-002",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "What is the value of 2^10?",
+    "type": "multiple-choice",
+    "options": ["512", "1024", "2048", "4096"],
+    "answer": "1024",
+    "explanation": "2^10 = 1024. Useful in computing — 1 kilobyte technically equals 1024 bytes."
+  },
+  {
+    "id": "n-h-003",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "Find the missing number: 1, 4, 27, 256, ?",
+    "type": "multiple-choice",
+    "options": ["625", "1024", "3125", "5000"],
+    "answer": "3125",
+    "explanation": "n^n: 1^1=1, 2^2=4, 3^3=27, 4^4=256, 5^5=3125."
+  },
+  {
+    "id": "n-h-004",
+    "category": "number",
+    "difficulty": "hard",
+    "question": "What is 7! (7 factorial)?",
+    "type": "multiple-choice",
+    "options": ["120", "720", "5040", "40320"],
+    "answer": "5040",
+    "explanation": "7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040."
+  },
+  {
+    "id": "v-e-001",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "How many sides does a hexagon have?",
+    "type": "multiple-choice",
+    "options": ["5", "6", "7", "8"],
+    "answer": "6",
+    "explanation": "'Hex' is Greek for six. Honeycombs are made of hexagons because they tile efficiently."
+  },
+  {
+    "id": "v-e-002",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "Which shape has no corners?",
+    "type": "multiple-choice",
+    "options": ["Triangle", "Square", "Circle", "Pentagon"],
+    "answer": "Circle",
+    "explanation": "A circle is a continuous curve with no corners or straight edges."
+  },
+  {
+    "id": "v-e-003",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "How many faces does a cube have?",
+    "type": "multiple-choice",
+    "options": ["4", "5", "6", "8"],
+    "answer": "6",
+    "explanation": "A cube has 6 square faces, 12 edges, and 8 vertices."
+  },
+  {
+    "id": "v-e-004",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "How many sides does a pentagon have?",
+    "type": "multiple-choice",
+    "options": ["3", "4", "5", "6"],
+    "answer": "5",
+    "explanation": "'Penta' is Greek for five."
+  },
+  {
+    "id": "v-e-005",
+    "category": "visual",
+    "difficulty": "easy",
+    "question": "Which doesn't belong: triangle, square, circle, pyramid?",
+    "type": "multiple-choice",
+    "options": ["Triangle", "Square", "Circle", "Pyramid"],
+    "answer": "Pyramid",
+    "explanation": "The others are 2D shapes; a pyramid is 3D."
+  },
+  {
+    "id": "v-m-001",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "How many edges does a triangular prism have?",
+    "type": "multiple-choice",
+    "options": ["6", "8", "9", "12"],
+    "answer": "9",
+    "explanation": "A triangular prism has 2 triangular faces (3 edges each = 6) plus 3 connecting edges = 9 total."
+  },
+  {
+    "id": "v-m-002",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "If you rotate the letter 'b' 180 degrees, what does it look like?",
+    "type": "multiple-choice",
+    "options": ["d", "p", "q", "b"],
+    "answer": "q",
+    "explanation": "Rotating 'b' 180° (upside-down) flips it both horizontally and vertically, giving 'q'."
+  },
+  {
+    "id": "v-m-003",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "How many vertices does an octahedron have?",
+    "type": "multiple-choice",
+    "options": ["4", "6", "8", "12"],
+    "answer": "6",
+    "explanation": "An octahedron has 8 triangular faces but only 6 vertices and 12 edges."
+  },
+  {
+    "id": "v-m-004",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "A clock's mirror image shows 9:00. What time is the actual clock showing?",
+    "type": "multiple-choice",
+    "options": ["3:00", "9:00", "6:00", "12:00"],
+    "answer": "3:00",
+    "explanation": "A mirror flips left-right. 9:00 in a mirror appears where 3:00 actually is."
+  },
+  {
+    "id": "v-m-005",
+    "category": "visual",
+    "difficulty": "medium",
+    "question": "Which 3D shape has the most faces: cube, tetrahedron, octahedron, or square pyramid?",
+    "type": "multiple-choice",
+    "options": ["Cube", "Tetrahedron", "Octahedron", "Square pyramid"],
+    "answer": "Octahedron",
+    "explanation": "Octahedron has 8 faces. Cube has 6, square pyramid has 5, tetrahedron has 4."
+  },
+  {
+    "id": "v-h-001",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "A cube is painted blue on all sides, then cut into 27 smaller cubes (3×3×3). How many smaller cubes have NO paint on any face?",
+    "type": "multiple-choice",
+    "options": ["0", "1", "6", "8"],
+    "answer": "1",
+    "explanation": "Only the very center cube has no exposed face — it's completely surrounded."
+  },
+  {
+    "id": "v-h-002",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "Same painted cube cut into 27 pieces — how many have paint on exactly 2 faces?",
+    "type": "multiple-choice",
+    "options": ["6", "8", "12", "20"],
+    "answer": "12",
+    "explanation": "Edge cubes (not corners, not face-centers, not the inner cube) have 2 painted faces. There are 12 edges on a cube."
+  },
+  {
+    "id": "v-h-003",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "How many diagonals does a regular hexagon have?",
+    "type": "multiple-choice",
+    "options": ["6", "9", "12", "15"],
+    "answer": "9",
+    "explanation": "Formula: n(n-3)/2 where n is the number of sides. 6(3)/2 = 9."
+  },
+  {
+    "id": "v-h-004",
+    "category": "visual",
+    "difficulty": "hard",
+    "question": "An ant is at one corner of a cube. What's the shortest path along the surface to the opposite corner, if each edge is 1 unit?",
+    "type": "multiple-choice",
+    "options": ["√2", "√3", "√5", "2"],
+    "answer": "√5",
+    "explanation": "Unfolding two adjacent faces makes a 1×2 rectangle. The diagonal is √(1² + 2²) = √5 ≈ 2.24."
+  }
+]
