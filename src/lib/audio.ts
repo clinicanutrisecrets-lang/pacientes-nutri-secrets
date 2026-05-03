@@ -59,41 +59,50 @@ function buildDrone(ctx: AudioContext, master: GainNode): AudioNode[] {
 }
 
 function buildRain(ctx: AudioContext, master: GainNode): AudioNode[] {
-  // Soft, distant rain — brown noise base, gentle band, attenuated, with a
-  // slow LFO modulating the cutoff to create soft "waves" of rain intensity
+  // Distant, gentle rain — brown noise base, tight mid-band, heavily
+  // attenuated, with slow LFO modulation creating soft waves of intensity.
   const source = createBrownNoiseSource(ctx);
 
+  // Steep high-pass to remove all rumble — rain is mostly mid frequencies
   const hp = ctx.createBiquadFilter();
   hp.type = 'highpass';
-  hp.frequency.value = 220;
-  hp.Q.value = 0.5;
+  hp.frequency.value = 480;
+  hp.Q.value = 0.7;
 
+  // Aggressive low-pass — keep only the soft "patter" range
   const lp = ctx.createBiquadFilter();
   lp.type = 'lowpass';
-  lp.frequency.value = 2000;
-  lp.Q.value = 0.4;
+  lp.frequency.value = 1300;
+  lp.Q.value = 0.5;
 
-  // Reduce overall amplitude so it never feels harsh
+  // Notch the harsh 1.5–2 kHz region just in case
+  const notch = ctx.createBiquadFilter();
+  notch.type = 'peaking';
+  notch.frequency.value = 1700;
+  notch.Q.value = 0.8;
+  notch.gain.value = -6;
+
+  // Heavy attenuation so it never feels close or loud
   const reduce = ctx.createGain();
-  reduce.gain.value = 0.45;
+  reduce.gain.value = 0.18;
 
-  // Very slow modulation of the low-pass cutoff (~1500–2500 Hz) for gentle
-  // changes in brightness, like rain coming in waves
+  // Slow LFO (~14 s period) sweeping the low-pass between 1000–1500 Hz
   const lfo = ctx.createOscillator();
   lfo.type = 'sine';
   lfo.frequency.value = 0.07;
   const lfoGain = ctx.createGain();
-  lfoGain.gain.value = 500;
+  lfoGain.gain.value = 250;
   lfo.connect(lfoGain);
   lfoGain.connect(lp.frequency);
   lfo.start();
 
   source.connect(hp);
   hp.connect(lp);
-  lp.connect(reduce);
+  lp.connect(notch);
+  notch.connect(reduce);
   reduce.connect(master);
 
-  return [source, hp, lp, reduce, lfo, lfoGain];
+  return [source, hp, lp, notch, reduce, lfo, lfoGain];
 }
 
 function teardown(audio: ActiveAudio, immediate = false): Promise<void> {
