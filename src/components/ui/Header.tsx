@@ -10,8 +10,9 @@ export function Header() {
   const { language, setLanguage } = useSettings();
 
   const isHome = location.pathname === '/';
-  const langShort = language.toLowerCase().startsWith('pt') ? 'PT' : 'EN';
-  const nextLang = langShort === 'PT' ? 'en' : 'pt-BR';
+  const isCurrentlyPT = language.toLowerCase().startsWith('pt');
+  const switchTo: 'en' | 'pt-BR' = isCurrentlyPT ? 'en' : 'pt-BR';
+  const buttonLabel = isCurrentlyPT ? 'EN' : 'PT';
 
   return (
     <header className="safe-top sticky top-0 z-20 bg-app/85 backdrop-blur border-b border-app">
@@ -36,14 +37,15 @@ export function Header() {
         <div className="flex items-center gap-1">
           <button
             type="button"
-            onClick={() => setLanguage(nextLang)}
+            onClick={() => setLanguage(switchTo)}
             className={cx(
               'rounded-full px-3 min-h-[36px] text-xs font-medium border border-app text-soft hover:text-app',
               'transition-colors duration-300 ease-out',
             )}
             aria-label={t('settings.language')}
+            title={isCurrentlyPT ? 'Switch to English' : 'Mudar para Português'}
           >
-            {langShort}
+            {buttonLabel}
           </button>
           <Link
             to="/settings"

@@ -117,9 +117,11 @@
     "first_day": "Dia um — que bom você estar aqui."
   },
   "install": {
-    "title": "Adicione o MindSpark à tela inicial",
-    "ios": "Toque no ícone de Compartilhar e depois em \"Adicionar à Tela de Início\".",
+    "title": "Adicione à tela do celular",
+    "subtitle": "Acesso rápido pelo seu celular, com modo offline.",
+    "ios": "Toque no ícone de Compartilhar abaixo e depois em \"Adicionar à Tela de Início\".",
     "android": "Abra o menu e toque em \"Instalar app\".",
+    "button": "Instalar no celular",
     "dismiss": "Talvez depois"
   },
   "update": {

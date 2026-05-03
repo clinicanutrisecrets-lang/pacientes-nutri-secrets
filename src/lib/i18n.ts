@@ -13,10 +13,12 @@ void i18n
   .init({
     resources: {
       en: { common: en },
+      pt: { common: ptBR },
       'pt-BR': { common: ptBR },
+      'pt-PT': { common: ptBR },
     },
     fallbackLng: 'en',
-    supportedLngs: ['en', 'pt-BR'],
+    supportedLngs: ['en', 'pt', 'pt-BR', 'pt-PT'],
     nonExplicitSupportedLngs: true,
     defaultNS: 'common',
     ns: ['common'],

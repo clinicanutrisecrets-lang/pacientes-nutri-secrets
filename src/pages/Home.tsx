@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useProgress } from '@/hooks/useProgress';
 import { Card } from '@/components/ui/Card';
+import { InstallCard } from '@/components/ui/InstallCard';
 import { todayKey } from '@/lib/util';
 
 function greetingKey(hour: number): 'home.greeting_morning' | 'home.greeting_afternoon' | 'home.greeting_evening' {
@@ -25,6 +26,8 @@ export function HomePage() {
         <h1 className="font-serif text-3xl text-app">{t('app.title')}</h1>
         <p className="text-soft">{t('app.tagline')}</p>
       </header>
+
+      <InstallCard />
 
       <Link to="/daily" className="block focus-visible:outline-none">
         <Card className="hover:border-[var(--color-primary)] transition-colors duration-300">
