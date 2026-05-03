@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from './Button';
-import { Card } from './Card';
 import { dismissInstall, isInstallDismissed } from '@/lib/storage';
 
 interface BeforeInstallPromptEvent extends Event {
@@ -68,25 +67,39 @@ export function InstallCard() {
   const canInstallNative = Boolean(installEvent);
 
   return (
-    <Card className="border-[var(--color-secondary)]/40 bg-[color:var(--color-secondary)]/5">
-      <div className="space-y-3">
-        <p className="text-soft text-xs uppercase tracking-wider">📱</p>
-        <h2 className="font-serif text-xl text-app leading-snug">{t('install.title')}</h2>
-        <p className="text-soft text-sm">{t('install.subtitle')}</p>
-        <p className="text-app text-sm">
+    <div className="rounded-3xl p-6 shadow-sm relative overflow-hidden bg-gradient-to-br from-[#E8C99B] to-[#D4A574] border border-[#C2935E]/30">
+      <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/15 pointer-events-none" />
+      <div className="absolute -right-4 -bottom-12 w-28 h-28 rounded-full bg-white/10 pointer-events-none" />
+      <div className="relative space-y-3">
+        <div className="flex items-center gap-2 text-[#5A3F1B]/80 text-xs uppercase tracking-wider font-medium">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+            <line x1="12" y1="18" x2="12.01" y2="18" />
+          </svg>
+          <span>App</span>
+        </div>
+        <h2 className="font-serif text-xl text-[#3D2A0F] leading-snug">
+          {t('install.title')}
+        </h2>
+        <p className="text-[#5A3F1B] text-sm">{t('install.subtitle')}</p>
+        <p className="text-[#3D2A0F] text-sm bg-white/30 rounded-xl px-3 py-2">
           {onIOS ? t('install.ios') : t('install.android')}
         </p>
-        <div className="flex flex-wrap gap-2 pt-2">
+        <div className="flex flex-wrap gap-2 pt-1">
           {canInstallNative ? (
-            <Button onClick={handleInstall} size="md">
+            <Button onClick={handleInstall} size="md" className="bg-[#3D2A0F] text-[#FAF7F2] hover:bg-[#2D1F0A]">
               {t('install.button')}
             </Button>
           ) : null}
-          <Button variant="ghost" size="md" onClick={handleDismiss}>
+          <button
+            type="button"
+            onClick={handleDismiss}
+            className="min-h-[48px] px-5 rounded-2xl text-sm text-[#5A3F1B] hover:bg-white/20 transition-colors"
+          >
             {t('install.dismiss')}
-          </Button>
+          </button>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }

@@ -31,13 +31,15 @@ const PATTERNS: Record<BreathingPattern, PhaseStep[]> = {
 interface BreathingState {
   phase: BreathPhase;
   scale: number;
+  progress: number;
   cycleSeconds: number;
 }
 
 export function useBreathing(pattern: BreathingPattern, active: boolean): BreathingState {
   const steps = PATTERNS[pattern];
   const [phase, setPhase] = useState<BreathPhase>(steps[0].phase);
-  const [scale, setScale] = useState<number>(0.7);
+  const [scale, setScale] = useState<number>(0.5);
+  const [progress, setProgress] = useState<number>(0);
   const stepIndexRef = useRef(0);
   const timerRef = useRef<number | null>(null);
   const rafRef = useRef<number | null>(null);
@@ -48,7 +50,8 @@ export function useBreathing(pattern: BreathingPattern, active: boolean): Breath
   useEffect(() => {
     stepIndexRef.current = 0;
     setPhase(steps[0].phase);
-    setScale(0.7);
+    setScale(0.5);
+    setProgress(0);
   }, [pattern, steps]);
 
   useEffect(() => {
@@ -64,17 +67,17 @@ export function useBreathing(pattern: BreathingPattern, active: boolean): Breath
       switch (phase) {
         case 'in': return 1;
         case 'hold': return 1;
-        case 'out': return 0.7;
-        case 'hold-out': return 0.7;
+        case 'out': return 0.5;
+        case 'hold-out': return 0.5;
       }
     }
 
     function startScaleFor(phase: BreathPhase): number {
       switch (phase) {
-        case 'in': return 0.7;
+        case 'in': return 0.5;
         case 'hold': return 1;
         case 'out': return 1;
-        case 'hold-out': return 0.7;
+        case 'hold-out': return 0.5;
       }
     }
 
@@ -86,6 +89,7 @@ export function useBreathing(pattern: BreathingPattern, active: boolean): Breath
       const start = startScaleFor(step.phase);
       const target = targetScaleFor(step.phase);
       setScale(start + (target - start) * t);
+      setProgress(t);
       if (t < 1) {
         rafRef.current = requestAnimationFrame(tick);
       }
@@ -95,6 +99,7 @@ export function useBreathing(pattern: BreathingPattern, active: boolean): Breath
       stepIndexRef.current = (stepIndexRef.current + 1) % steps.length;
       const next = steps[stepIndexRef.current];
       setPhase(next.phase);
+      setProgress(0);
       phaseStartRef.current = performance.now();
       if (settings.haptics) softPulse();
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
@@ -104,6 +109,7 @@ export function useBreathing(pattern: BreathingPattern, active: boolean): Breath
 
     phaseStartRef.current = performance.now();
     setPhase(steps[stepIndexRef.current].phase);
+    setProgress(0);
     rafRef.current = requestAnimationFrame(tick);
     timerRef.current = window.setTimeout(advance, steps[stepIndexRef.current].seconds * 1000);
 
@@ -115,5 +121,5 @@ export function useBreathing(pattern: BreathingPattern, active: boolean): Breath
     };
   }, [active, pattern, steps, settings.haptics]);
 
-  return { phase, scale, cycleSeconds };
+  return { phase, scale, progress, cycleSeconds };
 }
