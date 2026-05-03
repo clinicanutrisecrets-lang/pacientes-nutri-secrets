@@ -132,6 +132,12 @@ export function InstallCard() {
           <p className="text-[#3D2A0F] text-sm leading-relaxed">{t(instructionKey)}</p>
         </div>
 
+        {platform === 'ios-safari' ? (
+          <p className="text-center text-[#5A3F1B] text-xs italic mt-1">
+            {t('install.ios_safari_hint')}
+          </p>
+        ) : null}
+
         <div className="flex flex-wrap gap-2 pt-1">
           {canInstallNative ? (
             <Button onClick={handleInstall} size="md" className="bg-[#3D2A0F] text-[#FAF7F2] hover:bg-[#2D1F0A]">
