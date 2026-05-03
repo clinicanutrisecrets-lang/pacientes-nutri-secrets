@@ -28,29 +28,6 @@ function createBrownNoiseSource(ctx: AudioContext): AudioBufferSourceNode {
   return source;
 }
 
-function createPinkishNoiseSource(ctx: AudioContext): AudioBufferSourceNode {
-  const bufferSize = 2 * ctx.sampleRate;
-  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-  const output = buffer.getChannelData(0);
-  let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
-  for (let i = 0; i < bufferSize; i++) {
-    const white = Math.random() * 2 - 1;
-    b0 = 0.99886 * b0 + white * 0.0555179;
-    b1 = 0.99332 * b1 + white * 0.0750759;
-    b2 = 0.969 * b2 + white * 0.153852;
-    b3 = 0.8665 * b3 + white * 0.3104856;
-    b4 = 0.55 * b4 + white * 0.5329522;
-    b5 = -0.7616 * b5 - white * 0.016898;
-    output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.11;
-    b6 = white * 0.115926;
-  }
-  const source = ctx.createBufferSource();
-  source.buffer = buffer;
-  source.loop = true;
-  source.start(0);
-  return source;
-}
-
 function buildBrown(ctx: AudioContext, master: GainNode): AudioNode[] {
   const source = createBrownNoiseSource(ctx);
   const lp = ctx.createBiquadFilter();
@@ -82,17 +59,41 @@ function buildDrone(ctx: AudioContext, master: GainNode): AudioNode[] {
 }
 
 function buildRain(ctx: AudioContext, master: GainNode): AudioNode[] {
-  const source = createPinkishNoiseSource(ctx);
+  // Soft, distant rain — brown noise base, gentle band, attenuated, with a
+  // slow LFO modulating the cutoff to create soft "waves" of rain intensity
+  const source = createBrownNoiseSource(ctx);
+
   const hp = ctx.createBiquadFilter();
   hp.type = 'highpass';
-  hp.frequency.value = 800;
+  hp.frequency.value = 220;
+  hp.Q.value = 0.5;
+
   const lp = ctx.createBiquadFilter();
   lp.type = 'lowpass';
-  lp.frequency.value = 5000;
+  lp.frequency.value = 2000;
+  lp.Q.value = 0.4;
+
+  // Reduce overall amplitude so it never feels harsh
+  const reduce = ctx.createGain();
+  reduce.gain.value = 0.45;
+
+  // Very slow modulation of the low-pass cutoff (~1500–2500 Hz) for gentle
+  // changes in brightness, like rain coming in waves
+  const lfo = ctx.createOscillator();
+  lfo.type = 'sine';
+  lfo.frequency.value = 0.07;
+  const lfoGain = ctx.createGain();
+  lfoGain.gain.value = 500;
+  lfo.connect(lfoGain);
+  lfoGain.connect(lp.frequency);
+  lfo.start();
+
   source.connect(hp);
   hp.connect(lp);
-  lp.connect(master);
-  return [source, hp, lp];
+  lp.connect(reduce);
+  reduce.connect(master);
+
+  return [source, hp, lp, reduce, lfo, lfoGain];
 }
 
 function teardown(audio: ActiveAudio, immediate = false): Promise<void> {

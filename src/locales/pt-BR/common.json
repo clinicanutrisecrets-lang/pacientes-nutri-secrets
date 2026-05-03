@@ -119,10 +119,13 @@
   "install": {
     "title": "Adicione à tela do celular",
     "subtitle": "Acesso rápido pelo seu celular, com modo offline.",
-    "ios": "Toque no ícone de Compartilhar abaixo e depois em \"Adicionar à Tela de Início\".",
-    "android": "Abra o menu e toque em \"Instalar app\".",
+    "ios_safari": "Toque no botão de Compartilhar abaixo — parece um quadrado com uma seta pra cima — e escolha \"Adicionar à Tela de Início\".",
+    "ios_other": "Abra esta página no Safari e use Compartilhar → Adicionar à Tela de Início.",
+    "android": "Abra o menu do navegador (⋮) e toque em \"Instalar app\" ou \"Adicionar à Tela inicial\".",
+    "desktop": "Abra este site no seu celular pra instalar na tela inicial.",
     "button": "Instalar no celular",
-    "dismiss": "Talvez depois"
+    "dismiss": "Talvez depois",
+    "share_label": "Botão de Compartilhar"
   },
   "update": {
     "title": "Uma versão nova está pronta",

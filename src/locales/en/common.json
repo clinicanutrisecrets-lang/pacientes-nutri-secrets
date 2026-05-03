@@ -119,10 +119,13 @@
   "install": {
     "title": "Add MindSpark to your home screen",
     "subtitle": "Quick access from your phone, with offline support.",
-    "ios": "Tap the Share icon below, then \"Add to Home Screen\".",
-    "android": "Open the menu and tap \"Install app\".",
+    "ios_safari": "Tap the Share button below — looks like a square with an arrow pointing up — then choose \"Add to Home Screen\".",
+    "ios_other": "Open this page in Safari, then use Share → Add to Home Screen.",
+    "android": "Open the browser menu (⋮) and tap \"Install app\" or \"Add to Home Screen\".",
+    "desktop": "Open this site on your phone to install it on the home screen.",
     "button": "Install on phone",
-    "dismiss": "Maybe later"
+    "dismiss": "Maybe later",
+    "share_label": "Share button"
   },
   "update": {
     "title": "A fresh version is ready",

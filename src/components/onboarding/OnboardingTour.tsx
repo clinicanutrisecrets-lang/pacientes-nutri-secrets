@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { isTourSeen, markTourSeen } from '@/lib/storage';
+import { useSettings } from '@/hooks/useSettings';
 import { Button } from '@/components/ui/Button';
 import { cx } from '@/lib/util';
 
-const STEPS = ['welcome', 'breathe', 'daily', 'play', 'settings'] as const;
+const STEPS = ['language', 'welcome', 'breathe', 'daily', 'play', 'settings'] as const;
 type Step = typeof STEPS[number];
 
 interface Props {
@@ -14,6 +15,14 @@ interface Props {
 
 function StepIcon({ step }: { step: Step }) {
   const common = 'w-12 h-12';
+  if (step === 'language') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={common}>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+      </svg>
+    );
+  }
   if (step === 'welcome') {
     return (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={common}>
@@ -63,6 +72,7 @@ function StepIcon({ step }: { step: Step }) {
 
 export function OnboardingTour({ onClose, forceOpen = false }: Props) {
   const { t } = useTranslation();
+  const { setLanguage, language } = useSettings();
   const [open, setOpen] = useState<boolean>(() => forceOpen || !isTourSeen());
   const [stepIndex, setStepIndex] = useState(0);
 
@@ -78,6 +88,7 @@ export function OnboardingTour({ onClose, forceOpen = false }: Props) {
   const step = STEPS[stepIndex];
   const isLast = stepIndex === STEPS.length - 1;
   const isFirst = stepIndex === 0;
+  const isLanguageStep = step === 'language';
 
   const finish = () => {
     markTourSeen();
@@ -98,6 +109,13 @@ export function OnboardingTour({ onClose, forceOpen = false }: Props) {
     finish();
   };
 
+  const handlePickLanguage = (lang: 'en' | 'pt-BR') => {
+    setLanguage(lang);
+    setStepIndex(1);
+  };
+
+  const currentLangIsPT = language.toLowerCase().startsWith('pt');
+
   return (
     <div
       role="dialog"
@@ -107,31 +125,82 @@ export function OnboardingTour({ onClose, forceOpen = false }: Props) {
       <div className="w-full max-w-md rounded-t-3xl sm:rounded-3xl bg-surface border border-app shadow-xl p-6 m-0 sm:m-6 safe-bottom">
         <div className="flex items-center justify-between mb-4">
           <span className="text-soft text-xs uppercase tracking-wider">
-            {t('tour.step', { current: stepIndex + 1, total: STEPS.length })}
+            {isLanguageStep
+              ? `${stepIndex + 1} / ${STEPS.length}`
+              : t('tour.step', { current: stepIndex + 1, total: STEPS.length })}
           </span>
           <button
             type="button"
             onClick={handleSkip}
             className="text-soft text-sm hover:text-app rounded-lg px-2 py-1"
           >
-            {t('tour.skip')}
+            {isLanguageStep ? 'Skip · Pular' : t('tour.skip')}
           </button>
         </div>
 
-        <div className="flex items-start gap-4 mb-4">
-          <div className="shrink-0 w-14 h-14 rounded-2xl bg-[var(--color-primary)]/15 text-[var(--color-primary)] flex items-center justify-center">
-            <StepIcon step={step} />
-          </div>
-          <div className="flex-1 min-w-0 space-y-1">
-            <h2 className="font-serif text-2xl text-app leading-snug">
-              {t(`tour.${step}.title`)}
-            </h2>
-          </div>
-        </div>
+        {isLanguageStep ? (
+          <div className="space-y-5">
+            <div className="flex items-start gap-4">
+              <div className="shrink-0 w-14 h-14 rounded-2xl bg-[var(--color-primary)]/15 text-[var(--color-primary)] flex items-center justify-center">
+                <StepIcon step="language" />
+              </div>
+              <div className="flex-1 min-w-0 space-y-1">
+                <h2 className="font-serif text-2xl text-app leading-snug">
+                  Language · Idioma
+                </h2>
+                <p className="text-soft text-sm">
+                  Choose your language · Escolha seu idioma
+                </p>
+              </div>
+            </div>
 
-        <p className="text-app leading-relaxed mb-6">{t(`tour.${step}.body`)}</p>
+            <div className="space-y-3">
+              <button
+                type="button"
+                onClick={() => handlePickLanguage('en')}
+                className={cx(
+                  'w-full flex items-center justify-between min-h-[56px] px-5 rounded-2xl border transition-colors duration-300 ease-out',
+                  !currentLangIsPT
+                    ? 'border-[var(--color-primary)] bg-[color:var(--color-primary)]/10 text-app'
+                    : 'border-app text-app hover:bg-[var(--color-surface-soft)]',
+                )}
+              >
+                <span className="text-base font-medium">English</span>
+                <span className="text-soft text-sm">EN</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handlePickLanguage('pt-BR')}
+                className={cx(
+                  'w-full flex items-center justify-between min-h-[56px] px-5 rounded-2xl border transition-colors duration-300 ease-out',
+                  currentLangIsPT
+                    ? 'border-[var(--color-primary)] bg-[color:var(--color-primary)]/10 text-app'
+                    : 'border-app text-app hover:bg-[var(--color-surface-soft)]',
+                )}
+              >
+                <span className="text-base font-medium">Português</span>
+                <span className="text-soft text-sm">PT</span>
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="shrink-0 w-14 h-14 rounded-2xl bg-[var(--color-primary)]/15 text-[var(--color-primary)] flex items-center justify-center">
+                <StepIcon step={step} />
+              </div>
+              <div className="flex-1 min-w-0 space-y-1">
+                <h2 className="font-serif text-2xl text-app leading-snug">
+                  {t(`tour.${step}.title`)}
+                </h2>
+              </div>
+            </div>
 
-        <div className="flex items-center gap-2 mb-5" aria-hidden>
+            <p className="text-app leading-relaxed mb-6">{t(`tour.${step}.body`)}</p>
+          </>
+        )}
+
+        <div className="flex items-center gap-2 mb-5 mt-5" aria-hidden>
           {STEPS.map((s, i) => (
             <span
               key={s}
@@ -147,16 +216,18 @@ export function OnboardingTour({ onClose, forceOpen = false }: Props) {
           ))}
         </div>
 
-        <div className="flex gap-2">
-          {!isFirst ? (
-            <Button variant="secondary" size="md" onClick={handleBack} className="flex-1">
-              {t('tour.back')}
+        {!isLanguageStep ? (
+          <div className="flex gap-2">
+            {!isFirst ? (
+              <Button variant="secondary" size="md" onClick={handleBack} className="flex-1">
+                {t('tour.back')}
+              </Button>
+            ) : null}
+            <Button size="md" onClick={handleNext} className="flex-1">
+              {isLast ? t('tour.done') : t('tour.next')}
             </Button>
-          ) : null}
-          <Button size="md" onClick={handleNext} className="flex-1">
-            {isLast ? t('tour.done') : t('tour.next')}
-          </Button>
-        </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );
