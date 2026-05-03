@@ -5,8 +5,10 @@ import { Segmented } from '@/components/ui/Segmented';
 import { Slider } from '@/components/ui/Slider';
 import { Toggle } from '@/components/ui/Toggle';
 import { Button } from '@/components/ui/Button';
+import { OnboardingTour } from '@/components/onboarding/OnboardingTour';
 import { useSettings } from '@/hooks/useSettings';
 import { useProgress } from '@/hooks/useProgress';
+import { resetTour } from '@/lib/storage';
 import type {
   AppLanguage,
   BreathingPattern,
@@ -21,11 +23,15 @@ export function SettingsPage() {
   const { settings, update, language, setLanguage } = useSettings();
   const { reset } = useProgress();
   const [confirmReset, setConfirmReset] = useState(false);
+  const [showTour, setShowTour] = useState(false);
 
   const langValue: AppLanguage = language.toLowerCase().startsWith('pt') ? 'pt-BR' : 'en';
 
   return (
     <div className="space-y-6">
+      {showTour ? (
+        <OnboardingTour forceOpen onClose={() => setShowTour(false)} />
+      ) : null}
       <h1 className="font-serif text-2xl text-app">{t('settings.title')}</h1>
 
       <Card>
@@ -120,6 +126,19 @@ export function SettingsPage() {
           value={settings.reducedMotion}
           onChange={(v) => update('reducedMotion', v)}
         />
+      </Card>
+
+      <Card>
+        <Button
+          variant="secondary"
+          className="w-full"
+          onClick={() => {
+            resetTour();
+            setShowTour(true);
+          }}
+        >
+          {t('tour.replay')}
+        </Button>
       </Card>
 
       <Card>

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useBreathing } from '@/hooks/useBreathing';
+import { useBreathing, type BreathPhase } from '@/hooks/useBreathing';
 import { useSettings } from '@/hooks/useSettings';
 import { Button } from '@/components/ui/Button';
 import { Segmented } from '@/components/ui/Segmented';
@@ -11,15 +11,151 @@ interface Props {
 
 const SIZE = 280;
 const CENTER = SIZE / 2;
-const RING_RADIUS = 124;
-const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
-const INNER_RADIUS = 92;
+const SHAPE_R = 96;
+
+function makeStarPath(cx: number, cy: number, outerR: number, innerR: number): string {
+  const points = 5;
+  let d = '';
+  for (let i = 0; i < points * 2; i++) {
+    const angle = (Math.PI * i) / points - Math.PI / 2;
+    const r = i % 2 === 0 ? outerR : innerR;
+    const x = cx + r * Math.cos(angle);
+    const y = cy + r * Math.sin(angle);
+    d += (i === 0 ? 'M' : 'L') + x.toFixed(2) + ',' + y.toFixed(2);
+  }
+  return d + 'Z';
+}
+
+function makeTrianglePath(cx: number, cy: number, r: number): string {
+  const points: string[] = [];
+  for (let i = 0; i < 3; i++) {
+    const a = -Math.PI / 2 + i * ((Math.PI * 2) / 3);
+    const x = cx + r * Math.cos(a);
+    const y = cy + r * Math.sin(a);
+    points.push(`${x.toFixed(2)},${y.toFixed(2)}`);
+  }
+  return `M${points[0]} L${points[1]} L${points[2]} Z`;
+}
+
+const STAR_PATH = makeStarPath(CENTER, CENTER, SHAPE_R, SHAPE_R * 0.42);
+const STAR_LENGTH = 760;
+const TRIANGLE_PATH = makeTrianglePath(CENTER, CENTER, SHAPE_R);
+
+interface ShapeProps {
+  phase: BreathPhase;
+  progress: number;
+  reduce: boolean;
+}
+
+function PhaseShape({ phase, progress, reduce }: ShapeProps) {
+  const t = reduce ? 0.6 : Math.max(0, Math.min(1, progress));
+
+  if (phase === 'in') {
+    const r = 8 + (SHAPE_R - 8) * t;
+    return (
+      <g>
+        <circle
+          cx={CENTER}
+          cy={CENTER}
+          r={SHAPE_R}
+          fill="none"
+          stroke="var(--color-primary)"
+          strokeOpacity="0.18"
+          strokeWidth="3"
+        />
+        <circle
+          cx={CENTER}
+          cy={CENTER}
+          r={r}
+          fill="url(#breath-fill)"
+          style={{ transition: reduce ? 'none' : 'r 0.16s linear' }}
+        />
+      </g>
+    );
+  }
+
+  if (phase === 'hold') {
+    return (
+      <g>
+        <circle
+          cx={CENTER}
+          cy={CENTER}
+          r={SHAPE_R}
+          fill="none"
+          stroke="var(--color-primary)"
+          strokeOpacity="0.08"
+          strokeWidth="1"
+        />
+        <path
+          d={STAR_PATH}
+          fill="url(#breath-fill)"
+          fillOpacity={0.05 + t * 0.55}
+          stroke="var(--color-primary)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray={STAR_LENGTH}
+          strokeDashoffset={STAR_LENGTH * (1 - t)}
+          style={{
+            transition: reduce ? 'none' : 'stroke-dashoffset 0.16s linear, fill-opacity 0.16s linear',
+          }}
+        />
+      </g>
+    );
+  }
+
+  if (phase === 'out') {
+    const scale = 1 - t;
+    return (
+      <g>
+        <path
+          d={TRIANGLE_PATH}
+          fill="none"
+          stroke="var(--color-primary)"
+          strokeOpacity="0.18"
+          strokeWidth="3"
+        />
+        <g
+          style={{
+            transformOrigin: `${CENTER}px ${CENTER}px`,
+            transform: `scale(${scale})`,
+            transition: reduce ? 'none' : 'transform 0.16s linear',
+          }}
+        >
+          <path d={TRIANGLE_PATH} fill="url(#breath-fill)" />
+        </g>
+      </g>
+    );
+  }
+
+  // hold-out — soft square at the bottom of the cycle (box pattern only)
+  const SQ = SHAPE_R * 1.45;
+  const x = CENTER - SQ / 2;
+  const y = CENTER - SQ / 2;
+  return (
+    <g>
+      <rect
+        x={x}
+        y={y}
+        width={SQ}
+        height={SQ}
+        rx="14"
+        fill="url(#breath-fill)"
+        fillOpacity={0.18 + t * 0.18}
+        stroke="var(--color-primary)"
+        strokeOpacity="0.4"
+        strokeWidth="2"
+        style={{ transition: reduce ? 'none' : 'fill-opacity 0.16s linear' }}
+      />
+    </g>
+  );
+}
 
 export function BreathingFullscreen({ onClose }: Props) {
   const { t } = useTranslation();
   const { settings, update, prefersReducedMotion } = useSettings();
   const pattern = settings.breathingPattern;
-  const { phase, scale, progress } = useBreathing(pattern, true);
+  const { phase, progress } = useBreathing(pattern, true);
 
   const phaseLabel =
     phase === 'in'
@@ -33,11 +169,6 @@ export function BreathingFullscreen({ onClose }: Props) {
     { value: '478', label: t('breathe.patterns.478') },
     { value: 'box', label: t('breathe.patterns.box') },
   ];
-
-  const safeScale = prefersReducedMotion ? 0.85 : scale;
-  const safeProgress = prefersReducedMotion ? 0 : progress;
-  const dashOffset = RING_CIRCUMFERENCE * (1 - safeProgress);
-  const innerR = INNER_RADIUS * safeScale;
 
   return (
     <div
@@ -65,62 +196,10 @@ export function BreathingFullscreen({ onClose }: Props) {
           <defs>
             <radialGradient id="breath-fill" cx="0.5" cy="0.5" r="0.5">
               <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.65" />
             </radialGradient>
           </defs>
-
-          {/* Outer faint ring (background track) */}
-          <circle
-            cx={CENTER}
-            cy={CENTER}
-            r={RING_RADIUS}
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeOpacity="0.18"
-            strokeWidth="6"
-          />
-
-          {/* Progress ring — fills clockwise during each phase */}
-          <circle
-            cx={CENTER}
-            cy={CENTER}
-            r={RING_RADIUS}
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="6"
-            strokeLinecap="round"
-            strokeDasharray={RING_CIRCUMFERENCE}
-            strokeDashoffset={dashOffset}
-            transform={`rotate(-90 ${CENTER} ${CENTER})`}
-            style={{
-              transition: prefersReducedMotion ? 'none' : 'stroke-dashoffset 0.18s linear',
-            }}
-          />
-
-          {/* Filled inner circle that scales with the breath */}
-          <circle
-            cx={CENTER}
-            cy={CENTER}
-            r={innerR}
-            fill="url(#breath-fill)"
-            style={{
-              transition: prefersReducedMotion ? 'none' : 'r 0.18s linear',
-            }}
-          />
-
-          {/* Soft glow ring around the inner circle */}
-          <circle
-            cx={CENTER}
-            cy={CENTER}
-            r={innerR + 12}
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeOpacity="0.18"
-            strokeWidth="2"
-            style={{
-              transition: prefersReducedMotion ? 'none' : 'r 0.18s linear',
-            }}
-          />
+          <PhaseShape phase={phase} progress={progress} reduce={prefersReducedMotion} />
         </svg>
 
         <div className="font-serif text-3xl text-app text-center" aria-live="polite">

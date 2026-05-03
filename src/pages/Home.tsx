@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useProgress } from '@/hooks/useProgress';
 import { Card } from '@/components/ui/Card';
 import { InstallCard } from '@/components/ui/InstallCard';
+import { OnboardingTour } from '@/components/onboarding/OnboardingTour';
 import { todayKey } from '@/lib/util';
 
 function greetingKey(hour: number): 'home.greeting_morning' | 'home.greeting_afternoon' | 'home.greeting_evening' {
@@ -50,6 +51,7 @@ export function HomePage() {
 
   return (
     <div className="space-y-5">
+      <OnboardingTour />
       <header className="space-y-1 pt-2">
         <p className="text-soft text-sm">{greeting}</p>
         <h1 className="font-serif text-3xl text-app">{t('app.title')}</h1>

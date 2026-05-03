@@ -134,5 +134,33 @@
     "no": "Não",
     "cancel": "Cancelar",
     "close": "Fechar"
+  },
+  "tour": {
+    "skip": "Pular tour",
+    "next": "Próximo",
+    "back": "Voltar",
+    "done": "Entendi",
+    "step": "{{current}} de {{total}}",
+    "replay": "Ver o tour de novo",
+    "welcome": {
+      "title": "Bem-vindo ao MindSpark",
+      "body": "Um pequeno momento diário pra sua mente. Sem cronômetro, sem culpa de sequência, sem pressão — no seu ritmo."
+    },
+    "breathe": {
+      "title": "Respira sempre que quiser",
+      "body": "Vê aquele círculo suave no canto inferior direito? Ele fica sempre ali. Toca pra abrir um espaço calmo de respiração — útil antes de começar, entre enigmas, ou quando precisar de uma pausa."
+    },
+    "daily": {
+      "title": "Conjunto de hoje",
+      "body": "Cinco enigmas escolhidos a dedo por dia, misturando categorias. Só fazer já é suficiente — não tem placar."
+    },
+    "play": {
+      "title": "Jogo livre",
+      "body": "Escolhe categoria e dificuldade pra jogar quantos enigmas quiser. Experimenta o Adaptativo: ele ajusta o desafio sem que você perceba."
+    },
+    "settings": {
+      "title": "Deixe do seu jeito",
+      "body": "Idioma, tema claro ou escuro, som ambiente (ruído marrom / 432 Hz / chuva), padrão de respiração — tudo em Ajustes."
+    }
   }
 }

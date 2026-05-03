@@ -5,6 +5,7 @@ const KEY_SETTINGS = 'mindspark_settings';
 const KEY_LANG = 'mindspark_lang';
 const KEY_VISITS = 'mindspark_visit_count';
 const KEY_INSTALL_DISMISSED = 'mindspark_install_dismissed';
+const KEY_TOUR_DONE = 'mindspark_tour_done';
 
 export const defaultSettings: Settings = {
   theme: 'system',
@@ -111,4 +112,19 @@ export function isInstallDismissed(): boolean {
 export function dismissInstall(): void {
   if (typeof window === 'undefined') return;
   window.localStorage.setItem(KEY_INSTALL_DISMISSED, '1');
+}
+
+export function isTourSeen(): boolean {
+  if (typeof window === 'undefined') return true;
+  return window.localStorage.getItem(KEY_TOUR_DONE) === '1';
+}
+
+export function markTourSeen(): void {
+  if (typeof window === 'undefined') return;
+  window.localStorage.setItem(KEY_TOUR_DONE, '1');
+}
+
+export function resetTour(): void {
+  if (typeof window === 'undefined') return;
+  window.localStorage.removeItem(KEY_TOUR_DONE);
 }

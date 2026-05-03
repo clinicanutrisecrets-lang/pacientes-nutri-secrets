@@ -134,5 +134,33 @@
     "no": "No",
     "cancel": "Cancel",
     "close": "Close"
+  },
+  "tour": {
+    "skip": "Skip tour",
+    "next": "Next",
+    "back": "Back",
+    "done": "Got it",
+    "step": "{{current}} of {{total}}",
+    "replay": "Show tour again",
+    "welcome": {
+      "title": "Welcome to MindSpark",
+      "body": "A small, gentle daily moment for your mind. No timers, no streak shame, no pressure — take it at your own pace."
+    },
+    "breathe": {
+      "title": "Breathe, anytime",
+      "body": "See the soft circle in the bottom-right corner? It's always there. Tap it to open a calm breathing space — useful before starting a puzzle, between rounds, or whenever you need a pause."
+    },
+    "daily": {
+      "title": "Today's set",
+      "body": "Five hand-picked puzzles per day, mixing categories. Doing them is enough — there's no scoreboard."
+    },
+    "play": {
+      "title": "Free play",
+      "body": "Pick a category and difficulty for as many puzzles as you'd like. Try Adaptive: it adjusts gently based on how you're doing."
+    },
+    "settings": {
+      "title": "Make it yours",
+      "body": "Language, light or dark theme, ambient background sound (brown noise / 432 Hz / rain), breathing pattern — all in Settings."
+    }
   }
 }
